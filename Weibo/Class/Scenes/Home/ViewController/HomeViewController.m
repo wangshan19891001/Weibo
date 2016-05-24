@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 初始化导航条
+    [self initNavigationBar];
+    
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -33,6 +37,21 @@
         _tableView = [[UITableView alloc] initWithFrame:kScreen];
     }
     return _tableView;
+}
+
+#pragma mark - 初始化导航条
+- (void)initNavigationBar {
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(friendsearch) Image:@"navigationbar_friendsearch" highlightImage:@"navigationbar_friendsearch_highlighted"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) Image:@"navigationbar_pop" highlightImage:@"navigationbar_pop_highlighted"];
+
+}
+
+- (void)friendsearch {
+    NSLog(@"添加好友");
+}
+- (void)pop {
+    NSLog(@"扫一扫");
 }
 
 #pragma mark - tableView  dataSource delegate
@@ -54,8 +73,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     test1ViewController *test1 = [[test1ViewController alloc] initWithNibName:@"test1ViewController" bundle:nil];
-    
-    
     
     [self.navigationController pushViewController:test1 animated:YES];
     
