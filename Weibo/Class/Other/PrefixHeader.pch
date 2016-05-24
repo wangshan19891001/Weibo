@@ -24,5 +24,17 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 
+#ifdef DEBUG //处于开发阶段
+
+#define WSLog(...) NSLog(__VA_ARGS__)
+
+#else // 处于发布阶段
+#define WSLog(...)
+
+#endif
+
+
+
+
 
 #endif /* PrefixHeader_pch */

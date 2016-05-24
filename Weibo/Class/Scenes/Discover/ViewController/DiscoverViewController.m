@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "WSSearchBar.h"
 
 @interface DiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -20,7 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    // 初始化导航条
+    [self initNavigationBar];
+    
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -34,6 +39,19 @@
     }
     return _tableView;
 }
+
+#pragma mark - 初始化导航条
+- (void)initNavigationBar {
+
+    // 设置搜索框
+    WSSearchBar *searchBar = [WSSearchBar searchBar];
+    searchBar.width = kScreenWidth - 20;
+    searchBar.height = 30;
+    
+    self.navigationItem.titleView = searchBar;
+    
+}
+
 
 #pragma mark - tableView  dataSource delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

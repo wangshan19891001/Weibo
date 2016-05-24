@@ -73,6 +73,10 @@
     // 将子控制器添加到tabBar控制器上
     [self addChildViewController:nav];
     
+    // tabBar标签控制器, 在切换多个子视图控制器时, 除了当前显示的页面外, 其余视图也不会被销毁. 多个视图控制器存在于self.viewControllers 和 self.childViewControllers 数组中
+    
+    
+    
 }
 
 

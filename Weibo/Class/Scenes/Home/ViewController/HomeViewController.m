@@ -24,7 +24,7 @@
     // 初始化导航条
     [self initNavigationBar];
     
-    
+    // 初始化tableView视图
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -42,9 +42,31 @@
 #pragma mark - 初始化导航条
 - (void)initNavigationBar {
     
+    /*   左导航按钮   */
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(friendsearch) Image:@"navigationbar_friendsearch" highlightImage:@"navigationbar_friendsearch_highlighted"];
+    
+    
+    /*   右导航按钮   */
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) Image:@"navigationbar_pop" highlightImage:@"navigationbar_pop_highlighted"];
-
+    
+    /*   中间标题   */
+    UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    titleButton.width = 150;
+    titleButton.height = 30;
+    
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleButton.titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    
+    // 设置某一个方向的边距, 相当于该方向上的视图切割掉多少像素
+    [titleButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [titleButton setImageEdgeInsets:UIEdgeInsetsMake(0, 100, 0, 0)];
+    
+    // 监听按钮的点击方法
+    [titleButton addTarget:self action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleButton;
 }
 
 - (void)friendsearch {
@@ -52,6 +74,27 @@
 }
 - (void)pop {
     NSLog(@"扫一扫");
+}
+
+- (void)titleClick {
+    
+    // 获取当前屏幕最上层的窗口
+    UIWindow *window = [UIApplication sharedApplication].windows.lastObject;
+    
+    // 添加蒙版, 用来拦截下拉菜单下方视图的点击事件
+    UIView *cover = [[UIView alloc] initWithFrame:window.bounds];
+    cover.backgroundColor = [UIColor clearColor];
+    [window addSubview:cover];
+    
+    UIImageView *dropdownMenu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popover_background"]];
+    dropdownMenu.width = 217;
+    dropdownMenu.height = 217;
+    dropdownMenu.y = 40;
+    dropdownMenu.userInteractionEnabled = YES;
+    [cover addSubview:dropdownMenu];
+    
+    
+    
 }
 
 #pragma mark - tableView  dataSource delegate

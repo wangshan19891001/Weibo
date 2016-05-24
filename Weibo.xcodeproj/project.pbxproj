@@ -13,6 +13,7 @@
 		66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */; };
 		66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B7483A1CF3EC5400796A0E /* WSNavigationController.m */; };
 		66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */; };
+		66B748441CF4466000796A0E /* WSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748431CF4466000796A0E /* WSSearchBar.m */; };
 		66C12A251CE95B20001D85FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A241CE95B20001D85FA /* main.m */; };
 		66C12A2E1CE95B20001D85FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2C1CE95B20001D85FA /* Main.storyboard */; };
 		66C12A301CE95B20001D85FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2F1CE95B20001D85FA /* Assets.xcassets */; };
@@ -56,6 +57,8 @@
 		66B7483A1CF3EC5400796A0E /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSNavigationController.m; path = ../../WSNavigationController.m; sourceTree = "<group>"; };
 		66B7483F1CF403D500796A0E /* UIBarButtonItem+navItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+navItem.h"; sourceTree = "<group>"; };
 		66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+navItem.m"; sourceTree = "<group>"; };
+		66B748421CF4466000796A0E /* WSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSearchBar.h; path = Weibo/Class/Scenes/Main/WSSearchBar.h; sourceTree = SOURCE_ROOT; };
+		66B748431CF4466000796A0E /* WSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSSearchBar.m; path = Weibo/Class/Scenes/Main/WSSearchBar.m; sourceTree = SOURCE_ROOT; };
 		66C12A201CE95B20001D85FA /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C12A241CE95B20001D85FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66C12A2D1CE95B20001D85FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 		66033B2E1CEAA115003894FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66B748421CF4466000796A0E /* WSSearchBar.h */,
+				66B748431CF4466000796A0E /* WSSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */,
 				66033B381CEAA26F003894FD /* MainViewController.m in Sources */,
 				66C12A661CE95E49001D85FA /* AppDelegate.m in Sources */,
+				66B748441CF4466000796A0E /* WSSearchBar.m in Sources */,
 				66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */,
 				66C12A7F1CE966F8001D85FA /* HomeViewController.m in Sources */,
 			);
