@@ -55,8 +55,7 @@
     
     test1ViewController *test1 = [[test1ViewController alloc] initWithNibName:@"test1ViewController" bundle:nil];
     
-    // 在弹出下一级控制器时, 设置下一级控制器的底部tabBar 为隐藏状态
-    [test1 setHidesBottomBarWhenPushed:YES];
+    
     
     [self.navigationController pushViewController:test1 animated:YES];
     

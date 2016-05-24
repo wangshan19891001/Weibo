@@ -11,6 +11,7 @@
 		66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3A1CEAA5CB003894FD /* test1ViewController.m */; };
 		66033B3D1CEAA5CB003894FD /* test1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66033B3B1CEAA5CB003894FD /* test1ViewController.xib */; };
 		66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */; };
+		66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B7483A1CF3EC5400796A0E /* WSNavigationController.m */; };
 		66C12A251CE95B20001D85FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A241CE95B20001D85FA /* main.m */; };
 		66C12A2E1CE95B20001D85FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2C1CE95B20001D85FA /* Main.storyboard */; };
 		66C12A301CE95B20001D85FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2F1CE95B20001D85FA /* Assets.xcassets */; };
@@ -50,6 +51,8 @@
 		66033B3B1CEAA5CB003894FD /* test1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test1ViewController.xib; sourceTree = "<group>"; };
 		66033B3E1CEAC17D003894FD /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		66B748391CF3EC5400796A0E /* WSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSNavigationController.h; path = ../../WSNavigationController.h; sourceTree = "<group>"; };
+		66B7483A1CF3EC5400796A0E /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSNavigationController.m; path = ../../WSNavigationController.m; sourceTree = "<group>"; };
 		66C12A201CE95B20001D85FA /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C12A241CE95B20001D85FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66C12A2D1CE95B20001D85FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 		66033B2F1CEAA115003894FD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				66B748391CF3EC5400796A0E /* WSNavigationController.h */,
+				66B7483A1CF3EC5400796A0E /* WSNavigationController.m */,
 				66033B361CEAA26F003894FD /* MainViewController.h */,
 				66033B371CEAA26F003894FD /* MainViewController.m */,
 			);
@@ -559,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */,
+				66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */,
 				66C12A851CE96725001D85FA /* MessageViewController.m in Sources */,
 				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
 				66C12A251CE95B20001D85FA /* main.m in Sources */,

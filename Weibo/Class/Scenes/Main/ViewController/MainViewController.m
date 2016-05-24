@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "MessageViewController.h"
 #import "ProfileViewController.h"
+#import "WSNavigationController.h"
 
 
 @interface MainViewController ()
@@ -67,7 +68,7 @@
     viewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     // 给子控制器添加导航控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    WSNavigationController *nav = [[WSNavigationController alloc] initWithRootViewController:viewController];
     
     // 将子控制器添加到tabBar控制器上
     [self addChildViewController:nav];
