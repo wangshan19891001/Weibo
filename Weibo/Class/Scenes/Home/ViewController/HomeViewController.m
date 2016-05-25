@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "WSDropdownMenu.h"
+#import "DropTableVC.h"
 #import "test1ViewController.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -64,7 +66,7 @@
     [titleButton setImageEdgeInsets:UIEdgeInsetsMake(0, 100, 0, 0)];
     
     // 监听按钮的点击方法
-    [titleButton addTarget:self action:@selector(titleClick) forControlEvents:UIControlEventTouchUpInside];
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = titleButton;
 }
@@ -76,23 +78,21 @@
     NSLog(@"扫一扫");
 }
 
-- (void)titleClick {
+- (void)titleClick:(UIButton *)titleButton {
     
-    // 获取当前屏幕最上层的窗口
-    UIWindow *window = [UIApplication sharedApplication].windows.lastObject;
     
-    // 添加蒙版, 用来拦截下拉菜单下方视图的点击事件
-    UIView *cover = [[UIView alloc] initWithFrame:window.bounds];
-    cover.backgroundColor = [UIColor clearColor];
-    [window addSubview:cover];
     
-    UIImageView *dropdownMenu = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"popover_background"]];
-    dropdownMenu.width = 217;
-    dropdownMenu.height = 217;
-    dropdownMenu.y = 40;
-    dropdownMenu.userInteractionEnabled = YES;
-    [cover addSubview:dropdownMenu];
+    DropTableVC *dropTVC = [[DropTableVC alloc] init];
+    dropTVC.view.height = 44 * 3;
+    dropTVC.view.backgroundColor = [UIColor clearColor];
+//    dropTVC.tableView.backgroundColor = [UIColor clearColor];
     
+    WSDropdownMenu *dropdownMenu = [WSDropdownMenu menu];
+    
+    dropdownMenu.dropTVC = dropTVC;
+    
+    
+    [dropdownMenu showFrom:titleButton];
     
     
 }

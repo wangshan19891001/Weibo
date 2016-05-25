@@ -26,6 +26,8 @@
 		66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A811CE96714001D85FA /* DiscoverViewController.m */; };
 		66C12A851CE96725001D85FA /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A841CE96725001D85FA /* MessageViewController.m */; };
 		66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A871CE96739001D85FA /* ProfileViewController.m */; };
+		66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */; };
+		66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C331CF57B4E007D9DBD /* DropTableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		66C12A861CE96739001D85FA /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		66C12A871CE96739001D85FA /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		66C12A891CE96AA4001D85FA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		66C30C2C1CF533A1007D9DBD /* WSDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDropdownMenu.h; sourceTree = "<group>"; };
+		66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDropdownMenu.m; sourceTree = "<group>"; };
+		66C30C321CF57B4E007D9DBD /* DropTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTableVC.h; sourceTree = "<group>"; };
+		66C30C331CF57B4E007D9DBD /* DropTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTableVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +365,8 @@
 		66C12A731CE96621001D85FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66C30C2C1CF533A1007D9DBD /* WSDropdownMenu.h */,
+				66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +376,8 @@
 			children = (
 				66C12A7D1CE966F8001D85FA /* HomeViewController.h */,
 				66C12A7E1CE966F8001D85FA /* HomeViewController.m */,
+				66C30C321CF57B4E007D9DBD /* DropTableVC.h */,
+				66C30C331CF57B4E007D9DBD /* DropTableVC.m */,
 				66033B391CEAA5CB003894FD /* test1ViewController.h */,
 				66033B3A1CEAA5CB003894FD /* test1ViewController.m */,
 				66033B3B1CEAA5CB003894FD /* test1ViewController.xib */,
@@ -577,11 +587,13 @@
 				66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */,
 				66C12A851CE96725001D85FA /* MessageViewController.m in Sources */,
 				66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */,
+				66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */,
 				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
 				66C12A251CE95B20001D85FA /* main.m in Sources */,
 				66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */,
 				66033B381CEAA26F003894FD /* MainViewController.m in Sources */,
 				66C12A661CE95E49001D85FA /* AppDelegate.m in Sources */,
+				66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */,
 				66B748441CF4466000796A0E /* WSSearchBar.m in Sources */,
 				66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */,
 				66C12A7F1CE966F8001D85FA /* HomeViewController.m in Sources */,
