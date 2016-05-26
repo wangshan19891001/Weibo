@@ -13,6 +13,8 @@
 #import "HomeViewController.h"
 #import "MessageViewController.h"
 #import "ProfileViewController.h"
+#import "WSNewFeatureViewController.h"
+#import "OAuthViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,8 +30,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     // 设置窗口的根控制器
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    self.window.rootViewController = mainVC;
+//    MainViewController *mainVC = [[MainViewController alloc] init];
+//    self.window.rootViewController = mainVC;
+    
+//    WSNewFeatureViewController *newFeatureVC = [[WSNewFeatureViewController alloc] init];
+//    self.window.rootViewController = newFeatureVC;
+    
+    self.window.rootViewController = [[OAuthViewController alloc] init];
     
     // 显示窗口
     [self.window makeKeyAndVisible];

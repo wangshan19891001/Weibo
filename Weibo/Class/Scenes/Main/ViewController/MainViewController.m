@@ -12,9 +12,10 @@
 #import "MessageViewController.h"
 #import "ProfileViewController.h"
 #import "WSNavigationController.h"
+#import "WSTabBar.h"
 
 
-@interface MainViewController ()
+@interface MainViewController ()<WSTabBarDelegate>
 
 @end
 
@@ -41,9 +42,20 @@
     [self addChildViewController:profileVC title:@"我" image:@"tabbar_profile" selectImage:@"tabbar_profile_selected"];
     
     
-
-
+    // 替换系统的tabBar
+    WSTabBar *tabBar = [[WSTabBar alloc] init];
+    tabBar.delegate = self;
+    [self setValue:tabBar forKeyPath:@"tabBar"];
+    
 }
+
+- (void)tabBarDidClickPlusButton:(WSTabBar *)tabBar {
+    
+    NSLog(@"加号");
+    
+}
+
+
 
 /**
  *  添加子控制器
@@ -74,8 +86,6 @@
     [self addChildViewController:nav];
     
     // tabBar标签控制器, 在切换多个子视图控制器时, 除了当前显示的页面外, 其余视图也不会被销毁. 多个视图控制器存在于self.viewControllers 和 self.childViewControllers 数组中
-    
-    
     
 }
 
