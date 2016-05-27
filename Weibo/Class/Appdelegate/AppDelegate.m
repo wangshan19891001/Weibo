@@ -16,6 +16,8 @@
 #import "WSNewFeatureViewController.h"
 #import "OAuthViewController.h"
 
+#import "Account.h"
+
 @interface AppDelegate ()
 
 @end
@@ -36,7 +38,27 @@
 //    WSNewFeatureViewController *newFeatureVC = [[WSNewFeatureViewController alloc] init];
 //    self.window.rootViewController = newFeatureVC;
     
-    self.window.rootViewController = [[OAuthViewController alloc] init];
+//    self.window.rootViewController = [[OAuthViewController alloc] init];
+    
+    
+    
+    NSString *doc = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *filePath = [doc stringByAppendingPathComponent:@"account.archive"];
+    Account *account = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    
+    if (account) {
+        
+        MainViewController *mainVC = [[MainViewController alloc] init];
+        self.window.rootViewController = mainVC;
+    }else {
+    
+        self.window.rootViewController = [[OAuthViewController alloc] init];
+    }
+    
+    
+    
+    
+    
     
     // 显示窗口
     [self.window makeKeyAndVisible];

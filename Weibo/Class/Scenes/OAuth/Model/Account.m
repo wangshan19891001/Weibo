@@ -21,9 +21,9 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
 
-    [aCoder setValue:self.access_token forKey:@"access_token"];
-    [aCoder setValue:self.expires_in forKey:@"expires_in"];
-    [aCoder setValue:self.uid forKey:@"uid"];
+    [aCoder encodeObject:self.access_token forKey:@"access_token"];
+    [aCoder encodeObject:self.expires_in forKey:@"expires_in"];
+    [aCoder encodeObject:self.uid forKey:@"uid"];
     
 }
 
@@ -32,9 +32,9 @@
     self = [super init];
     if (self) {
         
-        self.access_token = [aDecoder valueForKey:@"access_token"];
-        self.expires_in = [aDecoder valueForKey:@"expires_in"];
-        self.uid = [aDecoder valueForKey:@"uid"];
+        self.access_token = [aDecoder decodeObjectForKey:@"access_token"];
+        self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
+        self.uid = [aDecoder decodeObjectForKey:@"uid"];
     }
     return self;
 }

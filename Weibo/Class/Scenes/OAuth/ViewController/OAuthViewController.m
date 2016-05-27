@@ -7,6 +7,8 @@
 //
 
 #import "OAuthViewController.h"
+#import "MainViewController.h"
+
 #import "Account.h"
 
 @interface OAuthViewController ()<UIWebViewDelegate>
@@ -34,10 +36,18 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSLog(@"网页加载完成");
+    
+    
+    
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"开始加载网页");
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    [MBProgressHUD hideHUDForView:webView animated:YES];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
@@ -96,7 +106,9 @@
         // 如果是字典类型, 则可以直接通过writeToFile: 方法直接存储到本地
 //        [responseObject writeToFile:filePath atomically:YES];
         
-        
+        MainViewController *mainVC = [[MainViewController alloc] init];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = mainVC;
         
         
         
