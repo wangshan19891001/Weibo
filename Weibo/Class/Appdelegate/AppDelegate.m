@@ -16,6 +16,7 @@
 #import "WSNewFeatureViewController.h"
 #import "OAuthViewController.h"
 
+#import "AccountTool.h"
 #import "Account.h"
 
 @interface AppDelegate ()
@@ -30,6 +31,8 @@
     // 创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    // 显示窗口
+    [self.window makeKeyAndVisible];
     
     // 设置窗口的根控制器
 //    MainViewController *mainVC = [[MainViewController alloc] init];
@@ -41,27 +44,22 @@
 //    self.window.rootViewController = [[OAuthViewController alloc] init];
     
     
-    
-    NSString *doc = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    NSString *filePath = [doc stringByAppendingPathComponent:@"account.archive"];
-    Account *account = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+    Account *account = [AccountTool loadAccount];
     
     if (account) {
         
-        MainViewController *mainVC = [[MainViewController alloc] init];
-        self.window.rootViewController = mainVC;
+//        MainViewController *mainVC = [[MainViewController alloc] init];
+//        self.window.rootViewController = mainVC;
+        
+        [UIWindow switchRootViewController];
+        
     }else {
     
         self.window.rootViewController = [[OAuthViewController alloc] init];
     }
     
     
-    
-    
-    
-    
-    // 显示窗口
-    [self.window makeKeyAndVisible];
+   
     
     
     return YES;

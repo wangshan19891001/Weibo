@@ -9,6 +9,7 @@
 #import "OAuthViewController.h"
 #import "MainViewController.h"
 
+#import "AccountTool.h"
 #import "Account.h"
 
 @interface OAuthViewController ()<UIWebViewDelegate>
@@ -36,9 +37,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSLog(@"网页加载完成");
-    
-    
-    
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
@@ -68,7 +66,6 @@
         // 利用code 换一个accessToken
         [self accessTokenWithCode:code];
         
-        
         // 禁止加载回调地址
         return NO;
     }
@@ -77,6 +74,12 @@
     return YES;
 }
 
+
+/**
+ *  利用code (授权成功后的request token) 换取一个accessToken
+ *
+ *  @param code 授权成功后的request Token
+ */
 - (void)accessTokenWithCode:(NSString *)code {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -93,15 +96,11 @@
         
         NSLog(@"请求成功responseObject:%@", responseObject);
         
-        // 获取沙盒路径
-        NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-        NSString *filePath = [path stringByAppendingPathComponent:@"account.archive"];
-        
         /* 存储账号信息 */
         // 字典转模型
         Account *account = [Account accountWithDict:responseObject];
         // 本地存储数据
-        [NSKeyedArchiver archiveRootObject:account toFile:filePath];
+        [AccountTool saveAccount:account];
         
         // 如果是字典类型, 则可以直接通过writeToFile: 方法直接存储到本地
 //        [responseObject writeToFile:filePath atomically:YES];

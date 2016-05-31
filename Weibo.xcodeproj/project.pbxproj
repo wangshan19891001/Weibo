@@ -32,6 +32,8 @@
 		66CA4B191CF68B2800B6BADB /* WSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B181CF68B2800B6BADB /* WSTabBar.m */; };
 		66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */; };
 		66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */; };
+		66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D502601CFC1D1C006C35DE /* AccountTool.m */; };
+		66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */; };
 		66F7C8041CF82EF400C74D0C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7C8031CF82EF400C74D0C /* Account.m */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,10 @@
 		66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewFeatureViewController.m; sourceTree = "<group>"; };
 		66CA4B211CF6F2F100B6BADB /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
 		66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
+		66D5025F1CFC1D1C006C35DE /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
+		66D502601CFC1D1C006C35DE /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
+		66D6E7C21CFD39E800C9A900 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
+		66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		66F7C8021CF82EF400C74D0C /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		66F7C8031CF82EF400C74D0C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		8B4D57B8051881D35A651FBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +289,8 @@
 				66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */,
 				66B7483F1CF403D500796A0E /* UIBarButtonItem+navItem.h */,
 				66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */,
+				66D6E7C21CFD39E800C9A900 /* UIWindow+Extension.h */,
+				66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -304,6 +312,8 @@
 		66C12A5E1CE95E49001D85FA /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				66D5025F1CFC1D1C006C35DE /* AccountTool.h */,
+				66D502601CFC1D1C006C35DE /* AccountTool.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -719,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */,
+				66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */,
 				66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */,
 				66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */,
 				66C12A851CE96725001D85FA /* MessageViewController.m in Sources */,
@@ -726,6 +737,7 @@
 				66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */,
 				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
 				66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */,
+				66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */,
 				66C12A251CE95B20001D85FA /* main.m in Sources */,
 				66F7C8041CF82EF400C74D0C /* Account.m in Sources */,
 				66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */,

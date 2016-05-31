@@ -26,6 +26,8 @@
     // 初始化导航条
     [self initNavigationBar];
     
+    
+    
     // 初始化tableView视图
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

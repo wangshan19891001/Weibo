@@ -11,6 +11,7 @@
 
 #import "UIView+FrameExtension.h"
 #import "UIBarButtonItem+navItem.h"
+#import "UIWindow+Extension.h"
 
 #import <AFNetworking.h>
 #import <MBProgressHUD.h>
