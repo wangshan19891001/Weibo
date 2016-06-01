@@ -37,11 +37,11 @@
     // 设置窗口的根控制器
 //    MainViewController *mainVC = [[MainViewController alloc] init];
 //    self.window.rootViewController = mainVC;
-    
 //    WSNewFeatureViewController *newFeatureVC = [[WSNewFeatureViewController alloc] init];
 //    self.window.rootViewController = newFeatureVC;
-    
 //    self.window.rootViewController = [[OAuthViewController alloc] init];
+    
+//    NSLog(@"Function:%s line:%d", __func__, __LINE__);
     
     
     Account *account = [AccountTool loadAccount];
@@ -51,7 +51,7 @@
 //        MainViewController *mainVC = [[MainViewController alloc] init];
 //        self.window.rootViewController = mainVC;
         
-        [UIWindow switchRootViewController];
+        [self.window switchRootViewController];
         
     }else {
     

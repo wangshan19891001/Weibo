@@ -105,10 +105,10 @@
         // 如果是字典类型, 则可以直接通过writeToFile: 方法直接存储到本地
 //        [responseObject writeToFile:filePath atomically:YES];
         
-        MainViewController *mainVC = [[MainViewController alloc] init];
+//        MainViewController *mainVC = [[MainViewController alloc] init];
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        window.rootViewController = mainVC;
-        
+//        window.rootViewController = mainVC;
+        [window switchRootViewController];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

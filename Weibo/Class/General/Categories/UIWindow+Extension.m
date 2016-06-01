@@ -18,6 +18,12 @@
     window.rootViewController = mainVC;
 }
 
+- (void)switchRootViewController {
+    
+    self.rootViewController = [[MainViewController alloc] init];
+
+}
+
 
 
 @end

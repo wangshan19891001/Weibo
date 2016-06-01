@@ -13,4 +13,8 @@
 // 切换根视图控制器
 + (void)switchRootViewController;
 
+// 切换根视图控制器
+- (void)switchRootViewController;
+
+
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Account;
+#import "Account.h"
 
 // 业务逻辑: 在程序中要执行的一些逻辑代码
 

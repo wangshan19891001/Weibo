@@ -7,15 +7,15 @@
 //
 
 #import "AccountTool.h"
-#import "Account.h"
+
 
 @implementation AccountTool
 
 + (void)saveAccount:(Account *)account {
     
     
-    // 获取账号的存储时间
-    account.create_time = [NSDate date];
+    // 这里不能设置创建时间, 否则在程序中每次保存账户时, 都会将新的创建时间保存, 这样创建时间永远不会过期, 所以, 保存创建时间应该放在Account.m 中,第一次用来接收系统返回Model的时候
+//    account.create_time = [NSDate date];
     
     // 获取沙盒路径
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;

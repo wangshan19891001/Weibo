@@ -29,6 +29,7 @@
 		66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A871CE96739001D85FA /* ProfileViewController.m */; };
 		66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */; };
 		66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C331CF57B4E007D9DBD /* DropTableVC.m */; };
+		66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */; };
 		66CA4B191CF68B2800B6BADB /* WSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B181CF68B2800B6BADB /* WSTabBar.m */; };
 		66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */; };
 		66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */; };
@@ -97,6 +98,7 @@
 		66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDropdownMenu.m; sourceTree = "<group>"; };
 		66C30C321CF57B4E007D9DBD /* DropTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTableVC.h; sourceTree = "<group>"; };
 		66C30C331CF57B4E007D9DBD /* DropTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTableVC.m; sourceTree = "<group>"; };
+		66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		66CA4B171CF68B2800B6BADB /* WSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTabBar.h; path = Weibo/Class/Scenes/Home/ViewController/WSTabBar.h; sourceTree = SOURCE_ROOT; };
 		66CA4B181CF68B2800B6BADB /* WSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTabBar.m; path = Weibo/Class/Scenes/Home/ViewController/WSTabBar.m; sourceTree = SOURCE_ROOT; };
 		66CA4B1C1CF6C6A700B6BADB /* WSNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewFeatureViewController.h; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		66C12A5B1CE95E49001D85FA /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */,
 				66033B3E1CEAC17D003894FD /* UIView+FrameExtension.h */,
 				66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */,
 				66B7483F1CF403D500796A0E /* UIBarButtonItem+navItem.h */,
@@ -736,6 +739,7 @@
 				66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */,
 				66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */,
 				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
+				66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */,
 				66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */,
 				66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */,
 				66C12A251CE95B20001D85FA /* main.m in Sources */,
