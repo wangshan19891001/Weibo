@@ -19,6 +19,8 @@
 #import "AccountTool.h"
 #import "Account.h"
 
+#import <SDWebImageManager.h>
+
 @interface AppDelegate ()
 
 @end
@@ -58,15 +60,19 @@
         self.window.rootViewController = [[OAuthViewController alloc] init];
     }
     
-    
-   
-    
-    
     return YES;
 }
 
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
 
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    
+    [manager cancelAll];
+    
+    [manager.imageCache clearDisk];
+    
+}
 
 
 

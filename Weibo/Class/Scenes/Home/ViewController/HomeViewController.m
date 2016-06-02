@@ -9,17 +9,21 @@
 #import "HomeViewController.h"
 #import "WSDropdownMenu.h"
 #import "DropTableVC.h"
+#import "TitleButton.h"
 #import "test1ViewController.h"
 
 #import "AccountTool.h"
 #import "Account.h"
 
 #import <AFNetworking.h>
+#import <UIImageView+WebCache.h>
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *statusArray;
+
 
 @end
 
@@ -46,12 +50,14 @@
     [self.view addSubview:self.tableView];
     
     // 请求用户信息
-    [self setUserInfo];
+    [self loadUserInfo];
     
+    // 加载微博数据
+    [self loadNewStatus];
     
 }
 
-- (void)setUserInfo {
+- (void)loadUserInfo {
     
     // https://api.weibo.com/2/users/show.json
     // GET
@@ -67,7 +73,9 @@
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"用户信息请求成功");
         
-        NSLog(@"%@", responseObject);
+        
+        
+//        NSLog(@"%@", responseObject);
         
         UIButton *button = (UIButton*) self.navigationItem.titleView;
         
@@ -85,8 +93,6 @@
         NSLog(@"用户信息请求失败, error: %@", error);
         
     }];
-    
-
 }
 
 
@@ -100,16 +106,9 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) Image:@"navigationbar_pop" highlightImage:@"navigationbar_pop_highlighted"];
     
     /*   中间标题   */
-    UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    titleButton.backgroundColor = [UIColor grayColor];
-    titleButton.imageView.backgroundColor = [UIColor yellowColor];
-    titleButton.width = 150;
-    titleButton.height = 30;
+    TitleButton *titleButton = [[TitleButton alloc] init];
     Account *account = [AccountTool loadAccount];
     [titleButton setTitle:account.name?account.name:@"首页" forState:UIControlStateNormal];
-    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    titleButton.titleLabel.font = [UIFont boldSystemFontOfSize:17];
-    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     
     // 监听按钮的点击方法
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -126,18 +125,15 @@
     // 宽度乘上scale系数, 保证retina屏幕上的图片宽度是正确的
 //    CGFloat titleW = titleButton.titleLabel.width * [UIScreen mainScreen].scale;
     
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSFontAttributeName] = titleButton.titleLabel.font;
-    CGFloat titleW = [titleButton.currentTitle sizeWithAttributes:attrs].width * [UIScreen mainScreen].scale;
-    
-    
-    CGFloat imageW = titleButton.imageView.width * [UIScreen mainScreen].scale;
-    CGFloat left = titleW + imageW;
-    titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, left, 0, 0);
-    titleButton.titleLabel.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.2];
-    
-    
-    
+//    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+//    attrs[NSFontAttributeName] = titleButton.titleLabel.font;
+//    CGFloat titleW = [titleButton.currentTitle sizeWithAttributes:attrs].width * [UIScreen mainScreen].scale;
+//    
+//    
+//    CGFloat imageW = titleButton.imageView.width * [UIScreen mainScreen].scale;
+//    CGFloat left = titleW + imageW;
+//    titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, left, 0, 0);
+//    titleButton.titleLabel.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.2];
     
     
     // 什么情况下建议使用imageEdgeInsets, titleEdgeInsets
@@ -177,19 +173,53 @@
     
 }
 
+
+- (void)loadNewStatus {
+    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    Account *account = [AccountTool loadAccount];
+    param[@"access_token"] = account.access_token;
+    param[@"count"] = @20;
+    
+    [[AFHTTPSessionManager manager] GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"微博数据请求成功");
+        
+        
+        self.statusArray = responseObject[@"statuses"];
+        NSLog(@"%@", self.statusArray);
+        
+        
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"微博数据请求失败, error: %@", error);
+        
+    }];
+}
+
+
 #pragma mark - tableView  dataSource delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return self.statusArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = @"home";
+    NSString *identifier = @"status";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    cell.textLabel.text = @"home";
+    
+    NSDictionary *status = self.statusArray[indexPath.row];
+    
+    cell.textLabel.text = status[@"user"][@"name"];
+    cell.detailTextLabel.text = status[@"text"];
+    NSString *urlString = status[@"user"][@"avatar_hd"];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    
+    
     return cell;
 }
 
