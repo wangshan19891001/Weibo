@@ -12,6 +12,10 @@
 		66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3A1CEAA5CB003894FD /* test1ViewController.m */; };
 		66033B3D1CEAA5CB003894FD /* test1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66033B3B1CEAA5CB003894FD /* test1ViewController.xib */; };
 		66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */; };
+		662B6F8C1D05072300314861 /* StatusReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8B1D05072300314861 /* StatusReq.m */; };
+		662B6F8F1D051E2500314861 /* UserInfoReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8E1D051E2500314861 /* UserInfoReq.m */; };
+		662B6F921D05430300314861 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F911D05430300314861 /* Status.m */; };
+		662B6F951D054DB000314861 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F941D054DB000314861 /* User.m */; };
 		66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B7483A1CF3EC5400796A0E /* WSNavigationController.m */; };
 		66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */; };
 		66B748441CF4466000796A0E /* WSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748431CF4466000796A0E /* WSSearchBar.m */; };
@@ -36,6 +40,8 @@
 		66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D502601CFC1D1C006C35DE /* AccountTool.m */; };
 		66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */; };
 		66E1F44B1D0007AF008F3B84 /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1F44A1D0007AF008F3B84 /* TitleButton.m */; };
+		66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2A78A1D0128DC00864D77 /* NetTools.m */; };
+		66E2A78F1D01299A00864D77 /* LocalTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2A78E1D01299A00864D77 /* LocalTools.m */; };
 		66F7C8041CF82EF400C74D0C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7C8031CF82EF400C74D0C /* Account.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +71,14 @@
 		66033B3B1CEAA5CB003894FD /* test1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test1ViewController.xib; sourceTree = "<group>"; };
 		66033B3E1CEAC17D003894FD /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		662B6F8A1D05072300314861 /* StatusReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusReq.h; sourceTree = "<group>"; };
+		662B6F8B1D05072300314861 /* StatusReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusReq.m; sourceTree = "<group>"; };
+		662B6F8D1D051E2500314861 /* UserInfoReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoReq.h; sourceTree = "<group>"; };
+		662B6F8E1D051E2500314861 /* UserInfoReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoReq.m; sourceTree = "<group>"; };
+		662B6F901D05430300314861 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		662B6F911D05430300314861 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		662B6F931D054DB000314861 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		662B6F941D054DB000314861 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		66B748391CF3EC5400796A0E /* WSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSNavigationController.h; path = ../../WSNavigationController.h; sourceTree = "<group>"; };
 		66B7483A1CF3EC5400796A0E /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSNavigationController.m; path = ../../WSNavigationController.m; sourceTree = "<group>"; };
 		66B7483F1CF403D500796A0E /* UIBarButtonItem+navItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+navItem.h"; sourceTree = "<group>"; };
@@ -112,6 +126,11 @@
 		66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		66E1F4491D0007AF008F3B84 /* TitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButton.h; sourceTree = "<group>"; };
 		66E1F44A1D0007AF008F3B84 /* TitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButton.m; sourceTree = "<group>"; };
+		66E2A7881D01261900864D77 /* SinaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaAPI.h; sourceTree = "<group>"; };
+		66E2A7891D0128DC00864D77 /* NetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTools.h; sourceTree = "<group>"; };
+		66E2A78A1D0128DC00864D77 /* NetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTools.m; sourceTree = "<group>"; };
+		66E2A78D1D01299A00864D77 /* LocalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTools.h; sourceTree = "<group>"; };
+		66E2A78E1D01299A00864D77 /* LocalTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTools.m; sourceTree = "<group>"; };
 		66F7C8021CF82EF400C74D0C /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		66F7C8031CF82EF400C74D0C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		8B4D57B8051881D35A651FBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +276,8 @@
 		66C12A561CE95E49001D85FA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				66E2A78C1D01296A00864D77 /* LocalService */,
+				66E2A7871D01259E00864D77 /* NetService */,
 				66C12A571CE95E49001D85FA /* Appdelegate */,
 				66C12A5A1CE95E49001D85FA /* General */,
 				66C12A5E1CE95E49001D85FA /* Helper */,
@@ -406,6 +427,10 @@
 		66C12A721CE96621001D85FA /* Model  */ = {
 			isa = PBXGroup;
 			children = (
+				662B6F901D05430300314861 /* Status.h */,
+				662B6F911D05430300314861 /* Status.m */,
+				662B6F931D054DB000314861 /* User.h */,
+				662B6F941D054DB000314861 /* User.m */,
 			);
 			path = "Model ";
 			sourceTree = "<group>";
@@ -534,6 +559,45 @@
 				66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		66E2A7871D01259E00864D77 /* NetService */ = {
+			isa = PBXGroup;
+			children = (
+				66E2A7901D014F1800864D77 /* Request */,
+				66E2A7911D014F1800864D77 /* Response */,
+				66E2A7881D01261900864D77 /* SinaAPI.h */,
+				66E2A7891D0128DC00864D77 /* NetTools.h */,
+				66E2A78A1D0128DC00864D77 /* NetTools.m */,
+			);
+			path = NetService;
+			sourceTree = "<group>";
+		};
+		66E2A78C1D01296A00864D77 /* LocalService */ = {
+			isa = PBXGroup;
+			children = (
+				66E2A78D1D01299A00864D77 /* LocalTools.h */,
+				66E2A78E1D01299A00864D77 /* LocalTools.m */,
+			);
+			path = LocalService;
+			sourceTree = "<group>";
+		};
+		66E2A7901D014F1800864D77 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				662B6F8A1D05072300314861 /* StatusReq.h */,
+				662B6F8B1D05072300314861 /* StatusReq.m */,
+				662B6F8D1D051E2500314861 /* UserInfoReq.h */,
+				662B6F8E1D051E2500314861 /* UserInfoReq.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		66E2A7911D014F1800864D77 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		66F7C8011CF82EC800C74D0C /* Model */ = {
@@ -740,8 +804,11 @@
 				66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */,
 				66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */,
 				66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */,
+				662B6F8C1D05072300314861 /* StatusReq.m in Sources */,
 				66C12A851CE96725001D85FA /* MessageViewController.m in Sources */,
 				66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */,
+				662B6F921D05430300314861 /* Status.m in Sources */,
+				662B6F951D054DB000314861 /* User.m in Sources */,
 				66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */,
 				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
 				66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */,
@@ -750,13 +817,16 @@
 				66C12A251CE95B20001D85FA /* main.m in Sources */,
 				66E1F44B1D0007AF008F3B84 /* TitleButton.m in Sources */,
 				66F7C8041CF82EF400C74D0C /* Account.m in Sources */,
+				662B6F8F1D051E2500314861 /* UserInfoReq.m in Sources */,
 				66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */,
 				66033B381CEAA26F003894FD /* MainViewController.m in Sources */,
 				66C12A661CE95E49001D85FA /* AppDelegate.m in Sources */,
 				66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */,
 				66B748441CF4466000796A0E /* WSSearchBar.m in Sources */,
+				66E2A78F1D01299A00864D77 /* LocalTools.m in Sources */,
 				66CA4B191CF68B2800B6BADB /* WSTabBar.m in Sources */,
 				66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */,
+				66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */,
 				66C12A7F1CE966F8001D85FA /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

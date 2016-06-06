@@ -12,11 +12,16 @@
 #import "TitleButton.h"
 #import "test1ViewController.h"
 
-#import "AccountTool.h"
 #import "Account.h"
+#import "Status.h"
+#import "User.h"
 
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
+
+#import "UserInfoReq.h"
+#import "StatusReq.h"
+
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,6 +33,13 @@
 @end
 
 @implementation HomeViewController
+
+- (NSMutableArray *)statusArray {
+    if (!_statusArray) {
+        _statusArray = [NSMutableArray array];
+    }
+    return _statusArray;
+}
 
 - (UITableView *)tableView {
     
@@ -43,7 +55,6 @@
     
     // 初始化导航条
     [self initNavigationBar];
-    
     // 初始化tableView视图
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -55,48 +66,14 @@
     // 加载微博数据
     [self loadNewStatus];
     
-}
-
-- (void)loadUserInfo {
+    // 集成下拉刷新控件
+    [self setupDownRefresh];
     
-    // https://api.weibo.com/2/users/show.json
-    // GET
-    // access_token
-    // uid
-    
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    Account *account = [AccountTool loadAccount];
-    param[@"access_token"] = account.access_token;
-    param[@"uid"] = account.uid;
-    
-    [[AFHTTPSessionManager manager] GET:@"https://api.weibo.com/2/users/show.json" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
-        NSLog(@"用户信息请求成功");
-        
-        
-        
-//        NSLog(@"%@", responseObject);
-        
-        UIButton *button = (UIButton*) self.navigationItem.titleView;
-        
-        account.name = responseObject[@"name"];
-        
-        [button setTitle:account.name forState:UIControlStateNormal];
-//        button.titleLabel.text = responseObject[@"name"]; // 这个方法点击一次button后, button的题目又变回去了
-        
-        // 保存账户昵称
-        [AccountTool saveAccount:account];
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
-        NSLog(@"用户信息请求失败, error: %@", error);
-        
-    }];
 }
 
 
-#pragma mark - 初始化导航条
+
+#pragma mark - 初始化控件
 - (void)initNavigationBar {
     
     /*   左导航按钮   */
@@ -107,7 +84,7 @@
     
     /*   中间标题   */
     TitleButton *titleButton = [[TitleButton alloc] init];
-    Account *account = [AccountTool loadAccount];
+    Account *account = [LocalTools loadAccount];
     [titleButton setTitle:account.name?account.name:@"首页" forState:UIControlStateNormal];
     
     // 监听按钮的点击方法
@@ -167,31 +144,143 @@
     
     dropdownMenu.dropTVC = dropTVC;
     
-    
     [dropdownMenu showFrom:titleButton];
-    
     
 }
 
+- (void)setupDownRefresh {
 
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:control];
+}
+- (void)refreshStateChange:(UIRefreshControl*)control {
+
+    Account *account = [LocalTools loadAccount];
+    
+    StatusReq* request = [[StatusReq alloc] init];
+    request.access_token = account.access_token;
+    request.count = @20;
+    
+    Status *firstStatus = self.statusArray.firstObject;
+    request.since_id = firstStatus.idstr;
+    
+    NetTools *server = [NetTools sharedManager];
+    [server loadStatus:request success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"下拉刷新请求成功");
+        
+        
+        NSArray *newStatusArray = responseObject[@"statuses"];
+        
+        if (newStatusArray.count > 0) {
+            
+            NSRange range = NSMakeRange(0, newStatusArray.count);
+            NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+            [self.statusArray insertObjects:newStatusArray atIndexes:set];
+        }
+        
+        
+        [control endRefreshing];
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"下拉刷新请求失败, error: %@", error);
+        [control endRefreshing];
+    }];
+}
+
+#pragma mark - 加载数据
+/**
+ *  加载用户信息
+ */
+- (void)loadUserInfo {
+    
+    Account *account = [LocalTools loadAccount];
+    UserInfoReq *request = [[UserInfoReq alloc] init];
+    request.access_token = account.access_token;
+    request.uid = account.uid;
+    
+    NetTools *server = [NetTools sharedManager];
+    [server loadUserInfo:request success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"用户信息请求成功");
+        
+        UIButton *button = (UIButton*) self.navigationItem.titleView;
+        
+        account.name = responseObject[@"name"];
+        
+        [button setTitle:account.name forState:UIControlStateNormal];
+//        button.titleLabel.text = responseObject[@"name"]; // 这个方法点击一次button后, button的题目又变回去了
+        
+        // 保存账户昵称
+        [LocalTools saveAccount:account];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"用户信息请求失败, error: %@", error);
+    }];
+}
+
+/**
+ *  加载微博数据
+ */
 - (void)loadNewStatus {
+
+    Account *account = [LocalTools loadAccount];
     
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    Account *account = [AccountTool loadAccount];
-    param[@"access_token"] = account.access_token;
-    param[@"count"] = @20;
+    StatusReq* request = [[StatusReq alloc] init];
+    request.access_token = account.access_token;
+    request.count = @20;
     
-    [[AFHTTPSessionManager manager] GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NetTools *server = [NetTools sharedManager];
+    [server loadStatus:request success:^(NSURLSessionDataTask *task, id responseObject) {
+        
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"微博数据请求成功");
         
-        
-        self.statusArray = responseObject[@"statuses"];
-        NSLog(@"%@", self.statusArray);
+            
+        NSArray *statusArray = responseObject[@"statuses"];
+        for (NSDictionary *dict in statusArray) {
+            
+//            Status *status = [[Status alloc] init];
+//            [status mj_setKeyValues:dict];
+
+            // 如果使用KVC赋值, 需要重写setValue:forUndefinedKey:
+//            [status setValuesForKeysWithDictionary:dict];
+            
+            
+            
+            Status *status = [Status mj_objectWithKeyValues:dict];
+            
+            
+            
+            [self.statusArray addObject:status];
+        }
         
         
         [self.tableView reloadData];
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        
+        // 包含模型的复杂字典, 不能写到plist文件中
+//        NSFileManager *manager = [NSFileManager defaultManager];
+//        NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+//        NSString *filePath = [path stringByAppendingPathComponent:@"status.plist"];
+//        [manager createFileAtPath:filePath contents:nil attributes:nil];
+//        
+//        NSDictionary *dict = [responseObject mj_keyValues];
+//        [dict writeToFile:filePath atomically:YES];
+//        
+//        NSDictionary *dic = @{@"wangshan":@"name"};
+//        NSLog(@"%@", dict);
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"微博数据请求失败, error: %@", error);
         
@@ -212,11 +301,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     
-    NSDictionary *status = self.statusArray[indexPath.row];
+    Status *status = self.statusArray[indexPath.row];
     
-    cell.textLabel.text = status[@"user"][@"name"];
-    cell.detailTextLabel.text = status[@"text"];
-    NSString *urlString = status[@"user"][@"avatar_hd"];
+    cell.textLabel.text = status.user.name;
+    cell.detailTextLabel.text = status.text;
+    NSString *urlString = status.user.avatar_hd;
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
     
     

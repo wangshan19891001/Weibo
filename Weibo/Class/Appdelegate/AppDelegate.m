@@ -16,7 +16,6 @@
 #import "WSNewFeatureViewController.h"
 #import "OAuthViewController.h"
 
-#import "AccountTool.h"
 #import "Account.h"
 
 #import <SDWebImageManager.h>
@@ -46,7 +45,7 @@
 //    NSLog(@"Function:%s line:%d", __func__, __LINE__);
     
     
-    Account *account = [AccountTool loadAccount];
+    Account *account = [LocalTools loadAccount];
     
     if (account) {
         

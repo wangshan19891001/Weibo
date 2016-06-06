@@ -9,34 +9,53 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+/**
+ *  分类
+ */
 #import "UIView+FrameExtension.h"
 #import "UIBarButtonItem+navItem.h"
 #import "UIWindow+Extension.h"
 
+
+
+/**
+ *  第三方类库
+ */
 #import <AFNetworking.h>
 #import <MBProgressHUD.h>
-
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <MJExtension.h>
 
 
+
+
+/**
+ *  自定义代码段
+ */
 #define Color(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-
-
 #define kScreen [UIScreen mainScreen].bounds
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
 
+
+/**
+ *  全局类
+ */
+#import "SinaAPI.h"
+#import "NetTools.h"
+#import "LocalTools.h"
+
+
+
+/**
+ *  日志输出
+ */
 #ifdef DEBUG //处于开发阶段
-
 #define WSLog(...) NSLog(__VA_ARGS__)
-
 #else // 处于发布阶段
 #define WSLog(...)
-
 #endif
-
 
 
 

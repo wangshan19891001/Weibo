@@ -9,7 +9,6 @@
 #import "OAuthViewController.h"
 #import "MainViewController.h"
 
-#import "AccountTool.h"
 #import "Account.h"
 
 @interface OAuthViewController ()<UIWebViewDelegate>
@@ -25,11 +24,11 @@
     webView.delegate = self;
     [self.view addSubview:webView];
     
+    NSString *urlString = [Sina_api_authorize stringByAppendingString:@"?client_id=1506295948&redirect_uri=http://www.baidu.com"];
     
-    NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=1506295948&redirect_uri=http://www.baidu.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    
     [webView loadRequest:request];
-    
     
 }
 
@@ -100,7 +99,7 @@
         // 字典转模型
         Account *account = [Account accountWithDict:responseObject];
         // 本地存储数据
-        [AccountTool saveAccount:account];
+        [LocalTools saveAccount:account];
         
         // 如果是字典类型, 则可以直接通过writeToFile: 方法直接存储到本地
 //        [responseObject writeToFile:filePath atomically:YES];

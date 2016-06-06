@@ -21,7 +21,6 @@
 - (void)switchRootViewController {
     
     self.rootViewController = [[MainViewController alloc] init];
-
 }
 
 
