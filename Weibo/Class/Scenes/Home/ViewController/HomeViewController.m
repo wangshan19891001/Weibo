@@ -164,7 +164,11 @@
     request.count = @20;
     
     Status *firstStatus = self.statusArray.firstObject;
-    request.since_id = firstStatus.idstr;
+    
+    if (firstStatus) {
+        request.since_id = firstStatus.idstr;
+    }
+    
     
     NetTools *server = [NetTools sharedManager];
     [server loadStatus:request success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -173,7 +177,12 @@
         NSLog(@"下拉刷新请求成功");
         
         
-        NSArray *newStatusArray = responseObject[@"statuses"];
+        // 程序会崩溃
+//        NSArray *newStatusArray = responseObject[@"statuses"];
+        
+        
+        // 将微博的字典数组 转为 模型数组
+        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
         if (newStatusArray.count > 0) {
             
