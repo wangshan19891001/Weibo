@@ -22,6 +22,7 @@
     // 获取沙盒路径
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *filePath = [path stringByAppendingPathComponent:@"account.archive"];
+    //自定义对象的存储必须用NSKeyedArchiver, 不再有writeToFile(字典, 数组, 字符串)
     [NSKeyedArchiver archiveRootObject:account toFile:filePath];
 }
 

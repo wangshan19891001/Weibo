@@ -47,7 +47,7 @@
     
     Account *account = [LocalTools loadAccount];
     
-    if (account) {
+    if (account) { //之前已经登录成功过
         
 //        MainViewController *mainVC = [[MainViewController alloc] init];
 //        self.window.rootViewController = mainVC;

@@ -8,17 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		49DCE0430AA46BC925BCC573 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F5CCC83A939711EFB94508 /* libPods.a */; };
-		66033B381CEAA26F003894FD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B371CEAA26F003894FD /* MainViewController.m */; };
-		66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3A1CEAA5CB003894FD /* test1ViewController.m */; };
-		66033B3D1CEAA5CB003894FD /* test1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66033B3B1CEAA5CB003894FD /* test1ViewController.xib */; };
 		66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */; };
 		662B6F8C1D05072300314861 /* StatusReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8B1D05072300314861 /* StatusReq.m */; };
 		662B6F8F1D051E2500314861 /* UserInfoReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8E1D051E2500314861 /* UserInfoReq.m */; };
-		662B6F921D05430300314861 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F911D05430300314861 /* Status.m */; };
-		662B6F951D054DB000314861 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F941D054DB000314861 /* User.m */; };
-		66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B7483A1CF3EC5400796A0E /* WSNavigationController.m */; };
 		66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */; };
-		66B748441CF4466000796A0E /* WSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748431CF4466000796A0E /* WSSearchBar.m */; };
 		66C12A251CE95B20001D85FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A241CE95B20001D85FA /* main.m */; };
 		66C12A2E1CE95B20001D85FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2C1CE95B20001D85FA /* Main.storyboard */; };
 		66C12A301CE95B20001D85FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A2F1CE95B20001D85FA /* Assets.xcassets */; };
@@ -27,22 +20,29 @@
 		66C12A491CE95B20001D85FA /* WeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A481CE95B20001D85FA /* WeiboUITests.m */; };
 		66C12A661CE95E49001D85FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A591CE95E49001D85FA /* AppDelegate.m */; };
 		66C12A681CE960BA001D85FA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66C12A671CE960BA001D85FA /* Default@2x.png */; };
-		66C12A7F1CE966F8001D85FA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A7E1CE966F8001D85FA /* HomeViewController.m */; };
-		66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A811CE96714001D85FA /* DiscoverViewController.m */; };
-		66C12A851CE96725001D85FA /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A841CE96725001D85FA /* MessageViewController.m */; };
-		66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C12A871CE96739001D85FA /* ProfileViewController.m */; };
-		66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */; };
-		66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C30C331CF57B4E007D9DBD /* DropTableVC.m */; };
+		66C363411DB8CA4600BBB9DF /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363121DB8CA4600BBB9DF /* DiscoverViewController.m */; };
+		66C363421DB8CA4600BBB9DF /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363161DB8CA4600BBB9DF /* Status.m */; };
+		66C363431DB8CA4600BBB9DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363181DB8CA4600BBB9DF /* User.m */; };
+		66C363441DB8CA4600BBB9DF /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3631B1DB8CA4600BBB9DF /* TitleButton.m */; };
+		66C363451DB8CA4600BBB9DF /* WSDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3631D1DB8CA4600BBB9DF /* WSDropdownMenu.m */; };
+		66C363461DB8CA4600BBB9DF /* DropTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363201DB8CA4600BBB9DF /* DropTableVC.m */; };
+		66C363471DB8CA4600BBB9DF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363221DB8CA4600BBB9DF /* HomeViewController.m */; };
+		66C363481DB8CA4600BBB9DF /* test1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363241DB8CA4600BBB9DF /* test1ViewController.m */; };
+		66C363491DB8CA4600BBB9DF /* test1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66C363251DB8CA4600BBB9DF /* test1ViewController.xib */; };
+		66C3634A1DB8CA4600BBB9DF /* WSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363271DB8CA4600BBB9DF /* WSTabBar.m */; };
+		66C3634B1DB8CA4600BBB9DF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3632B1DB8CA4600BBB9DF /* MainViewController.m */; };
+		66C3634C1DB8CA4600BBB9DF /* WSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3632D1DB8CA4600BBB9DF /* WSSearchBar.m */; };
+		66C3634D1DB8CA4600BBB9DF /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363311DB8CA4600BBB9DF /* MessageViewController.m */; };
+		66C3634E1DB8CA4600BBB9DF /* WSNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363351DB8CA4600BBB9DF /* WSNewFeatureViewController.m */; };
+		66C3634F1DB8CA4600BBB9DF /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363391DB8CA4600BBB9DF /* Account.m */; };
+		66C363501DB8CA4600BBB9DF /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C3633C1DB8CA4600BBB9DF /* OAuthViewController.m */; };
+		66C363511DB8CA4600BBB9DF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363401DB8CA4600BBB9DF /* ProfileViewController.m */; };
+		66C363541DB8CCD400BBB9DF /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363531DB8CCD400BBB9DF /* WSNavigationController.m */; };
 		66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */; };
-		66CA4B191CF68B2800B6BADB /* WSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B181CF68B2800B6BADB /* WSTabBar.m */; };
-		66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */; };
-		66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */; };
 		66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D502601CFC1D1C006C35DE /* AccountTool.m */; };
 		66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */; };
-		66E1F44B1D0007AF008F3B84 /* TitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E1F44A1D0007AF008F3B84 /* TitleButton.m */; };
 		66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2A78A1D0128DC00864D77 /* NetTools.m */; };
 		66E2A78F1D01299A00864D77 /* LocalTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2A78E1D01299A00864D77 /* LocalTools.m */; };
-		66F7C8041CF82EF400C74D0C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F7C8031CF82EF400C74D0C /* Account.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,27 +64,14 @@
 
 /* Begin PBXFileReference section */
 		2CA58CC63482032C56819E1C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		66033B361CEAA26F003894FD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		66033B371CEAA26F003894FD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		66033B391CEAA5CB003894FD /* test1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1ViewController.h; sourceTree = "<group>"; };
-		66033B3A1CEAA5CB003894FD /* test1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1ViewController.m; sourceTree = "<group>"; };
-		66033B3B1CEAA5CB003894FD /* test1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test1ViewController.xib; sourceTree = "<group>"; };
 		66033B3E1CEAC17D003894FD /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
 		662B6F8A1D05072300314861 /* StatusReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusReq.h; sourceTree = "<group>"; };
 		662B6F8B1D05072300314861 /* StatusReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusReq.m; sourceTree = "<group>"; };
 		662B6F8D1D051E2500314861 /* UserInfoReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoReq.h; sourceTree = "<group>"; };
 		662B6F8E1D051E2500314861 /* UserInfoReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoReq.m; sourceTree = "<group>"; };
-		662B6F901D05430300314861 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
-		662B6F911D05430300314861 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
-		662B6F931D054DB000314861 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		662B6F941D054DB000314861 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		66B748391CF3EC5400796A0E /* WSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSNavigationController.h; path = ../../WSNavigationController.h; sourceTree = "<group>"; };
-		66B7483A1CF3EC5400796A0E /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSNavigationController.m; path = ../../WSNavigationController.m; sourceTree = "<group>"; };
 		66B7483F1CF403D500796A0E /* UIBarButtonItem+navItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+navItem.h"; sourceTree = "<group>"; };
 		66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+navItem.m"; sourceTree = "<group>"; };
-		66B748421CF4466000796A0E /* WSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSearchBar.h; path = Weibo/Class/Scenes/Main/WSSearchBar.h; sourceTree = SOURCE_ROOT; };
-		66B748431CF4466000796A0E /* WSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSSearchBar.m; path = Weibo/Class/Scenes/Main/WSSearchBar.m; sourceTree = SOURCE_ROOT; };
 		66C12A201CE95B20001D85FA /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C12A241CE95B20001D85FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66C12A2D1CE95B20001D85FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,39 +87,52 @@
 		66C12A581CE95E49001D85FA /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66C12A591CE95E49001D85FA /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		66C12A671CE960BA001D85FA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		66C12A7D1CE966F8001D85FA /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		66C12A7E1CE966F8001D85FA /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		66C12A801CE96714001D85FA /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		66C12A811CE96714001D85FA /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		66C12A831CE96725001D85FA /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
-		66C12A841CE96725001D85FA /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		66C12A861CE96739001D85FA /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		66C12A871CE96739001D85FA /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		66C12A891CE96AA4001D85FA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		66C30C2C1CF533A1007D9DBD /* WSDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDropdownMenu.h; sourceTree = "<group>"; };
-		66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDropdownMenu.m; sourceTree = "<group>"; };
-		66C30C321CF57B4E007D9DBD /* DropTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTableVC.h; sourceTree = "<group>"; };
-		66C30C331CF57B4E007D9DBD /* DropTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTableVC.m; sourceTree = "<group>"; };
+		66C363111DB8CA4600BBB9DF /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		66C363121DB8CA4600BBB9DF /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		66C363151DB8CA4600BBB9DF /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		66C363161DB8CA4600BBB9DF /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		66C363171DB8CA4600BBB9DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		66C363181DB8CA4600BBB9DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		66C3631A1DB8CA4600BBB9DF /* TitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButton.h; sourceTree = "<group>"; };
+		66C3631B1DB8CA4600BBB9DF /* TitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButton.m; sourceTree = "<group>"; };
+		66C3631C1DB8CA4600BBB9DF /* WSDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDropdownMenu.h; sourceTree = "<group>"; };
+		66C3631D1DB8CA4600BBB9DF /* WSDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDropdownMenu.m; sourceTree = "<group>"; };
+		66C3631F1DB8CA4600BBB9DF /* DropTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropTableVC.h; sourceTree = "<group>"; };
+		66C363201DB8CA4600BBB9DF /* DropTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropTableVC.m; sourceTree = "<group>"; };
+		66C363211DB8CA4600BBB9DF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		66C363221DB8CA4600BBB9DF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		66C363231DB8CA4600BBB9DF /* test1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1ViewController.h; sourceTree = "<group>"; };
+		66C363241DB8CA4600BBB9DF /* test1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1ViewController.m; sourceTree = "<group>"; };
+		66C363251DB8CA4600BBB9DF /* test1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test1ViewController.xib; sourceTree = "<group>"; };
+		66C363261DB8CA4600BBB9DF /* WSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTabBar.h; sourceTree = "<group>"; };
+		66C363271DB8CA4600BBB9DF /* WSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTabBar.m; sourceTree = "<group>"; };
+		66C3632A1DB8CA4600BBB9DF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		66C3632B1DB8CA4600BBB9DF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		66C3632C1DB8CA4600BBB9DF /* WSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSearchBar.h; sourceTree = "<group>"; };
+		66C3632D1DB8CA4600BBB9DF /* WSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSearchBar.m; sourceTree = "<group>"; };
+		66C363301DB8CA4600BBB9DF /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		66C363311DB8CA4600BBB9DF /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		66C363341DB8CA4600BBB9DF /* WSNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewFeatureViewController.h; sourceTree = "<group>"; };
+		66C363351DB8CA4600BBB9DF /* WSNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewFeatureViewController.m; sourceTree = "<group>"; };
+		66C363381DB8CA4600BBB9DF /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		66C363391DB8CA4600BBB9DF /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		66C3633B1DB8CA4600BBB9DF /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
+		66C3633C1DB8CA4600BBB9DF /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
+		66C3633F1DB8CA4600BBB9DF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		66C363401DB8CA4600BBB9DF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		66C363521DB8CCD400BBB9DF /* WSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNavigationController.h; sourceTree = "<group>"; };
+		66C363531DB8CCD400BBB9DF /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNavigationController.m; sourceTree = "<group>"; };
 		66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
-		66CA4B171CF68B2800B6BADB /* WSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSTabBar.h; path = Weibo/Class/Scenes/Home/ViewController/WSTabBar.h; sourceTree = SOURCE_ROOT; };
-		66CA4B181CF68B2800B6BADB /* WSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSTabBar.m; path = Weibo/Class/Scenes/Home/ViewController/WSTabBar.m; sourceTree = SOURCE_ROOT; };
-		66CA4B1C1CF6C6A700B6BADB /* WSNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewFeatureViewController.h; sourceTree = "<group>"; };
-		66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewFeatureViewController.m; sourceTree = "<group>"; };
-		66CA4B211CF6F2F100B6BADB /* OAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthViewController.h; sourceTree = "<group>"; };
-		66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthViewController.m; sourceTree = "<group>"; };
 		66D5025F1CFC1D1C006C35DE /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
 		66D502601CFC1D1C006C35DE /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
 		66D6E7C21CFD39E800C9A900 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
 		66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
-		66E1F4491D0007AF008F3B84 /* TitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleButton.h; sourceTree = "<group>"; };
-		66E1F44A1D0007AF008F3B84 /* TitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleButton.m; sourceTree = "<group>"; };
 		66E2A7881D01261900864D77 /* SinaAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaAPI.h; sourceTree = "<group>"; };
 		66E2A7891D0128DC00864D77 /* NetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetTools.h; sourceTree = "<group>"; };
 		66E2A78A1D0128DC00864D77 /* NetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetTools.m; sourceTree = "<group>"; };
 		66E2A78D1D01299A00864D77 /* LocalTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalTools.h; sourceTree = "<group>"; };
 		66E2A78E1D01299A00864D77 /* LocalTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalTools.m; sourceTree = "<group>"; };
-		66F7C8021CF82EF400C74D0C /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		66F7C8031CF82EF400C74D0C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		8B4D57B8051881D35A651FBE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E5F5CCC83A939711EFB94508 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,45 +170,6 @@
 				8B4D57B8051881D35A651FBE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		66033B2C1CEAA115003894FD /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				66033B2D1CEAA115003894FD /* Model */,
-				66033B2E1CEAA115003894FD /* View */,
-				66033B2F1CEAA115003894FD /* ViewController */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		66033B2D1CEAA115003894FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		66033B2E1CEAA115003894FD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				66B748421CF4466000796A0E /* WSSearchBar.h */,
-				66B748431CF4466000796A0E /* WSSearchBar.m */,
-				66CA4B171CF68B2800B6BADB /* WSTabBar.h */,
-				66CA4B181CF68B2800B6BADB /* WSTabBar.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		66033B2F1CEAA115003894FD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				66B748391CF3EC5400796A0E /* WSNavigationController.h */,
-				66B7483A1CF3EC5400796A0E /* WSNavigationController.m */,
-				66033B361CEAA26F003894FD /* MainViewController.h */,
-				66033B371CEAA26F003894FD /* MainViewController.m */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		66C12A171CE95B20001D85FA = {
@@ -276,15 +237,19 @@
 		66C12A561CE95E49001D85FA /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				66C3630F1DB8CA4600BBB9DF /* Discover */,
+				66C363131DB8CA4600BBB9DF /* Home */,
+				66C363281DB8CA4600BBB9DF /* Main */,
+				66C3632E1DB8CA4600BBB9DF /* Message */,
+				66C363321DB8CA4600BBB9DF /* NewFeature */,
+				66C363361DB8CA4600BBB9DF /* OAuth */,
+				66C3633D1DB8CA4600BBB9DF /* profile */,
 				66E2A78C1D01296A00864D77 /* LocalService */,
 				66E2A7871D01259E00864D77 /* NetService */,
 				66C12A571CE95E49001D85FA /* Appdelegate */,
 				66C12A5A1CE95E49001D85FA /* General */,
 				66C12A5E1CE95E49001D85FA /* Helper */,
 				66C12A5F1CE95E49001D85FA /* Other */,
-				66C12A601CE95E49001D85FA /* Resource */,
-				66C12A611CE95E49001D85FA /* Scenes */,
-				66C12A651CE95E49001D85FA /* Vendors */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -353,210 +318,173 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		66C12A601CE95E49001D85FA /* Resource */ = {
+		66C3630F1DB8CA4600BBB9DF /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				66C363101DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = Resource;
+			name = Discover;
+			path = Scenes/Discover;
 			sourceTree = "<group>";
 		};
-		66C12A611CE95E49001D85FA /* Scenes */ = {
+		66C363101DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				66CA4B1F1CF6F2D600B6BADB /* OAuth */,
-				66CA4B1A1CF6C68400B6BADB /* NewFeature */,
-				66033B2C1CEAA115003894FD /* Main */,
-				66C12A6D1CE96621001D85FA /* Discover */,
-				66C12A711CE96621001D85FA /* Home */,
-				66C12A751CE96621001D85FA /* Message */,
-				66C12A791CE96621001D85FA /* profile */,
+				66C363111DB8CA4600BBB9DF /* DiscoverViewController.h */,
+				66C363121DB8CA4600BBB9DF /* DiscoverViewController.m */,
 			);
-			path = Scenes;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66C12A651CE95E49001D85FA /* Vendors */ = {
+		66C363131DB8CA4600BBB9DF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				66C363141DB8CA4600BBB9DF /* Model  */,
+				66C363191DB8CA4600BBB9DF /* View */,
+				66C3631E1DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = Vendors;
+			name = Home;
+			path = Scenes/Home;
 			sourceTree = "<group>";
 		};
-		66C12A6D1CE96621001D85FA /* Discover */ = {
+		66C363141DB8CA4600BBB9DF /* Model  */ = {
 			isa = PBXGroup;
 			children = (
-				66C12A6E1CE96621001D85FA /* Model  */,
-				66C12A6F1CE96621001D85FA /* View */,
-				66C12A701CE96621001D85FA /* ViewController */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		66C12A6E1CE96621001D85FA /* Model  */ = {
-			isa = PBXGroup;
-			children = (
+				66C363151DB8CA4600BBB9DF /* Status.h */,
+				66C363161DB8CA4600BBB9DF /* Status.m */,
+				66C363171DB8CA4600BBB9DF /* User.h */,
+				66C363181DB8CA4600BBB9DF /* User.m */,
 			);
 			path = "Model ";
 			sourceTree = "<group>";
 		};
-		66C12A6F1CE96621001D85FA /* View */ = {
+		66C363191DB8CA4600BBB9DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				66C3631A1DB8CA4600BBB9DF /* TitleButton.h */,
+				66C3631B1DB8CA4600BBB9DF /* TitleButton.m */,
+				66C3631C1DB8CA4600BBB9DF /* WSDropdownMenu.h */,
+				66C3631D1DB8CA4600BBB9DF /* WSDropdownMenu.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		66C12A701CE96621001D85FA /* ViewController */ = {
+		66C3631E1DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				66C12A801CE96714001D85FA /* DiscoverViewController.h */,
-				66C12A811CE96714001D85FA /* DiscoverViewController.m */,
+				66C3631F1DB8CA4600BBB9DF /* DropTableVC.h */,
+				66C363201DB8CA4600BBB9DF /* DropTableVC.m */,
+				66C363211DB8CA4600BBB9DF /* HomeViewController.h */,
+				66C363221DB8CA4600BBB9DF /* HomeViewController.m */,
+				66C363231DB8CA4600BBB9DF /* test1ViewController.h */,
+				66C363241DB8CA4600BBB9DF /* test1ViewController.m */,
+				66C363251DB8CA4600BBB9DF /* test1ViewController.xib */,
+				66C363261DB8CA4600BBB9DF /* WSTabBar.h */,
+				66C363271DB8CA4600BBB9DF /* WSTabBar.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66C12A711CE96621001D85FA /* Home */ = {
+		66C363281DB8CA4600BBB9DF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				66C12A741CE96621001D85FA /* ViewController */,
-				66C12A721CE96621001D85FA /* Model  */,
-				66C12A731CE96621001D85FA /* View */,
+				66C363291DB8CA4600BBB9DF /* ViewController */,
+				66C3632C1DB8CA4600BBB9DF /* WSSearchBar.h */,
+				66C3632D1DB8CA4600BBB9DF /* WSSearchBar.m */,
 			);
-			path = Home;
+			name = Main;
+			path = Scenes/Main;
 			sourceTree = "<group>";
 		};
-		66C12A721CE96621001D85FA /* Model  */ = {
+		66C363291DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				662B6F901D05430300314861 /* Status.h */,
-				662B6F911D05430300314861 /* Status.m */,
-				662B6F931D054DB000314861 /* User.h */,
-				662B6F941D054DB000314861 /* User.m */,
-			);
-			path = "Model ";
-			sourceTree = "<group>";
-		};
-		66C12A731CE96621001D85FA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				66C30C2C1CF533A1007D9DBD /* WSDropdownMenu.h */,
-				66C30C2D1CF533A1007D9DBD /* WSDropdownMenu.m */,
-				66E1F4491D0007AF008F3B84 /* TitleButton.h */,
-				66E1F44A1D0007AF008F3B84 /* TitleButton.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		66C12A741CE96621001D85FA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				66C12A7D1CE966F8001D85FA /* HomeViewController.h */,
-				66C12A7E1CE966F8001D85FA /* HomeViewController.m */,
-				66C30C321CF57B4E007D9DBD /* DropTableVC.h */,
-				66C30C331CF57B4E007D9DBD /* DropTableVC.m */,
-				66033B391CEAA5CB003894FD /* test1ViewController.h */,
-				66033B3A1CEAA5CB003894FD /* test1ViewController.m */,
-				66033B3B1CEAA5CB003894FD /* test1ViewController.xib */,
+				66C363521DB8CCD400BBB9DF /* WSNavigationController.h */,
+				66C363531DB8CCD400BBB9DF /* WSNavigationController.m */,
+				66C3632A1DB8CA4600BBB9DF /* MainViewController.h */,
+				66C3632B1DB8CA4600BBB9DF /* MainViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66C12A751CE96621001D85FA /* Message */ = {
+		66C3632E1DB8CA4600BBB9DF /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				66C12A761CE96621001D85FA /* Model  */,
-				66C12A771CE96621001D85FA /* View */,
-				66C12A781CE96621001D85FA /* ViewController */,
+				66C3632F1DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = Message;
+			name = Message;
+			path = Scenes/Message;
 			sourceTree = "<group>";
 		};
-		66C12A761CE96621001D85FA /* Model  */ = {
+		66C3632F1DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = "Model ";
-			sourceTree = "<group>";
-		};
-		66C12A771CE96621001D85FA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		66C12A781CE96621001D85FA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				66C12A831CE96725001D85FA /* MessageViewController.h */,
-				66C12A841CE96725001D85FA /* MessageViewController.m */,
+				66C363301DB8CA4600BBB9DF /* MessageViewController.h */,
+				66C363311DB8CA4600BBB9DF /* MessageViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66C12A791CE96621001D85FA /* profile */ = {
+		66C363321DB8CA4600BBB9DF /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
-				66C12A7A1CE96621001D85FA /* Model  */,
-				66C12A7B1CE96621001D85FA /* View */,
-				66C12A7C1CE96621001D85FA /* ViewController */,
+				66C363331DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = profile;
+			name = NewFeature;
+			path = Scenes/NewFeature;
 			sourceTree = "<group>";
 		};
-		66C12A7A1CE96621001D85FA /* Model  */ = {
+		66C363331DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = "Model ";
-			sourceTree = "<group>";
-		};
-		66C12A7B1CE96621001D85FA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		66C12A7C1CE96621001D85FA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				66C12A861CE96739001D85FA /* ProfileViewController.h */,
-				66C12A871CE96739001D85FA /* ProfileViewController.m */,
+				66C363341DB8CA4600BBB9DF /* WSNewFeatureViewController.h */,
+				66C363351DB8CA4600BBB9DF /* WSNewFeatureViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66CA4B1A1CF6C68400B6BADB /* NewFeature */ = {
+		66C363361DB8CA4600BBB9DF /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				66CA4B1B1CF6C68400B6BADB /* ViewController */,
+				66C363371DB8CA4600BBB9DF /* Model */,
+				66C3633A1DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = NewFeature;
+			name = OAuth;
+			path = Scenes/OAuth;
 			sourceTree = "<group>";
 		};
-		66CA4B1B1CF6C68400B6BADB /* ViewController */ = {
+		66C363371DB8CA4600BBB9DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				66CA4B1C1CF6C6A700B6BADB /* WSNewFeatureViewController.h */,
-				66CA4B1D1CF6C6A700B6BADB /* WSNewFeatureViewController.m */,
+				66C363381DB8CA4600BBB9DF /* Account.h */,
+				66C363391DB8CA4600BBB9DF /* Account.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66C3633A1DB8CA4600BBB9DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66C3633B1DB8CA4600BBB9DF /* OAuthViewController.h */,
+				66C3633C1DB8CA4600BBB9DF /* OAuthViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		66CA4B1F1CF6F2D600B6BADB /* OAuth */ = {
+		66C3633D1DB8CA4600BBB9DF /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				66F7C8011CF82EC800C74D0C /* Model */,
-				66CA4B201CF6F2D600B6BADB /* ViewController */,
+				66C3633E1DB8CA4600BBB9DF /* ViewController */,
 			);
-			path = OAuth;
+			name = profile;
+			path = Scenes/profile;
 			sourceTree = "<group>";
 		};
-		66CA4B201CF6F2D600B6BADB /* ViewController */ = {
+		66C3633E1DB8CA4600BBB9DF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				66CA4B211CF6F2F100B6BADB /* OAuthViewController.h */,
-				66CA4B221CF6F2F100B6BADB /* OAuthViewController.m */,
+				66C3633F1DB8CA4600BBB9DF /* ProfileViewController.h */,
+				66C363401DB8CA4600BBB9DF /* ProfileViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -598,15 +526,6 @@
 			children = (
 			);
 			path = Response;
-			sourceTree = "<group>";
-		};
-		66F7C8011CF82EC800C74D0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				66F7C8021CF82EF400C74D0C /* Account.h */,
-				66F7C8031CF82EF400C74D0C /* Account.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		CF518E812D4ABCBA6C8CB38E /* Frameworks */ = {
@@ -723,7 +642,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66033B3D1CEAA5CB003894FD /* test1ViewController.xib in Resources */,
+				66C363491DB8CA4600BBB9DF /* test1ViewController.xib in Resources */,
 				66C12A681CE960BA001D85FA /* Default@2x.png in Resources */,
 				66C12A331CE95B20001D85FA /* LaunchScreen.storyboard in Resources */,
 				66C12A301CE95B20001D85FA /* Assets.xcassets in Resources */,
@@ -800,34 +719,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66033B3C1CEAA5CB003894FD /* test1ViewController.m in Sources */,
+				66C363501DB8CA4600BBB9DF /* OAuthViewController.m in Sources */,
 				66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */,
-				66CA4B231CF6F2F100B6BADB /* OAuthViewController.m in Sources */,
-				66B7483B1CF3EC5400796A0E /* WSNavigationController.m in Sources */,
+				66C363411DB8CA4600BBB9DF /* DiscoverViewController.m in Sources */,
+				66C3634C1DB8CA4600BBB9DF /* WSSearchBar.m in Sources */,
+				66C3634D1DB8CA4600BBB9DF /* MessageViewController.m in Sources */,
 				662B6F8C1D05072300314861 /* StatusReq.m in Sources */,
-				66C12A851CE96725001D85FA /* MessageViewController.m in Sources */,
+				66C363441DB8CA4600BBB9DF /* TitleButton.m in Sources */,
+				66C363461DB8CA4600BBB9DF /* DropTableVC.m in Sources */,
 				66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */,
-				662B6F921D05430300314861 /* Status.m in Sources */,
-				662B6F951D054DB000314861 /* User.m in Sources */,
-				66C30C341CF57B4E007D9DBD /* DropTableVC.m in Sources */,
-				66C12A821CE96714001D85FA /* DiscoverViewController.m in Sources */,
+				66C363431DB8CA4600BBB9DF /* User.m in Sources */,
 				66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */,
-				66CA4B1E1CF6C6A700B6BADB /* WSNewFeatureViewController.m in Sources */,
+				66C363421DB8CA4600BBB9DF /* Status.m in Sources */,
 				66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */,
+				66C363541DB8CCD400BBB9DF /* WSNavigationController.m in Sources */,
 				66C12A251CE95B20001D85FA /* main.m in Sources */,
-				66E1F44B1D0007AF008F3B84 /* TitleButton.m in Sources */,
-				66F7C8041CF82EF400C74D0C /* Account.m in Sources */,
+				66C363451DB8CA4600BBB9DF /* WSDropdownMenu.m in Sources */,
 				662B6F8F1D051E2500314861 /* UserInfoReq.m in Sources */,
-				66C12A881CE96739001D85FA /* ProfileViewController.m in Sources */,
-				66033B381CEAA26F003894FD /* MainViewController.m in Sources */,
+				66C363481DB8CA4600BBB9DF /* test1ViewController.m in Sources */,
+				66C3634B1DB8CA4600BBB9DF /* MainViewController.m in Sources */,
+				66C363511DB8CA4600BBB9DF /* ProfileViewController.m in Sources */,
 				66C12A661CE95E49001D85FA /* AppDelegate.m in Sources */,
-				66C30C2E1CF533A1007D9DBD /* WSDropdownMenu.m in Sources */,
-				66B748441CF4466000796A0E /* WSSearchBar.m in Sources */,
+				66C3634A1DB8CA4600BBB9DF /* WSTabBar.m in Sources */,
+				66C3634E1DB8CA4600BBB9DF /* WSNewFeatureViewController.m in Sources */,
 				66E2A78F1D01299A00864D77 /* LocalTools.m in Sources */,
-				66CA4B191CF68B2800B6BADB /* WSTabBar.m in Sources */,
 				66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */,
 				66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */,
-				66C12A7F1CE966F8001D85FA /* HomeViewController.m in Sources */,
+				66C3634F1DB8CA4600BBB9DF /* Account.m in Sources */,
+				66C363471DB8CA4600BBB9DF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

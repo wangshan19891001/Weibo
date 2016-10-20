@@ -20,14 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //1, 创建一个webView
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     webView.delegate = self;
     [self.view addSubview:webView];
     
+    //2, 用webview加载登录页面(新浪提供的)
     NSString *urlString = [Sina_api_authorize stringByAppendingString:@"?client_id=1506295948&redirect_uri=http://www.baidu.com"];
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    
     [webView loadRequest:request];
     
 }
@@ -47,6 +47,7 @@
     [MBProgressHUD hideHUDForView:webView animated:YES];
 }
 
+//这个回调方法可以拦截url
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
 //    NSLog(@"%@", request.URL.absoluteString);

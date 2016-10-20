@@ -89,7 +89,8 @@
     
     // 监听按钮的点击方法
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    //设置按钮自适应
+//    [titleButton sizeToFit];
     self.navigationItem.titleView = titleButton;
     
     
@@ -102,6 +103,8 @@
     // 宽度乘上scale系数, 保证retina屏幕上的图片宽度是正确的
 //    CGFloat titleW = titleButton.titleLabel.width * [UIScreen mainScreen].scale;
     
+    
+    //根据字体查看字体所占的宽度 
 //    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
 //    attrs[NSFontAttributeName] = titleButton.titleLabel.font;
 //    CGFloat titleW = [titleButton.currentTitle sizeWithAttributes:attrs].width * [UIScreen mainScreen].scale;

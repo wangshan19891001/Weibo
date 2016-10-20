@@ -27,6 +27,8 @@
 
     [super layoutSubviews];
     
+    //如果仅仅是调整按钮内部titleLabel 和 imageView 的位置, 那么在layoutSubviews中单独设置位置即可
+    
     
 //    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
 //    attrs[NSFontAttributeName] = self.titleLabel.font;
@@ -40,7 +42,7 @@
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state {
     [super setTitle:title forState:state];
-    [self sizeToFit];
+    [self sizeToFit]; //内容有多少, 按钮的尺寸就有多少, 每次设置title的时候都会进行尺寸的设置
 }
 
 - (void)setImage:(UIImage *)image forState:(UIControlState)state {
