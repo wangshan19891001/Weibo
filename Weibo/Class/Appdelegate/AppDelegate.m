@@ -67,9 +67,11 @@
 
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
     
+    //取消下载
     [manager cancelAll];
-    
-    [manager.imageCache clearDisk];
+    //清除内存中的所有图片
+    [manager.imageCache clearMemory];
+//    [manager.imageCache clearDisk];
     
 }
 

@@ -166,8 +166,8 @@
     request.access_token = account.access_token;
     request.count = @20;
     
+    //取出微博中最前面的微博 (微博数据的第一条, 最新, id最大)
     Status *firstStatus = self.statusArray.firstObject;
-    
     if (firstStatus) {
         request.since_id = firstStatus.idstr;
     }
@@ -180,28 +180,28 @@
         NSLog(@"下拉刷新请求成功");
         
         
-        // 程序会崩溃
-//        NSArray *newStatusArray = responseObject[@"statuses"];
-        
-        
         // 将微博的字典数组 转为 模型数组
         NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //newStatusArray 需要插入到原来总数组的最前面
         
         if (newStatusArray.count > 0) {
             
-            NSRange range = NSMakeRange(0, newStatusArray.count);
+            NSRange range = NSMakeRange(0, newStatusArray.count); //从头0开始, count是插入的长度
             NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
             [self.statusArray insertObjects:newStatusArray atIndexes:set];
         }
         
-        
-        [control endRefreshing];
-        
+        //刷新UI
         [self.tableView reloadData];
+        
+        //结束刷新
+        [control endRefreshing];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"下拉刷新请求失败, error: %@", error);
+        
+        //结束刷新状态
         [control endRefreshing];
     }];
 }
@@ -256,27 +256,33 @@
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"微博数据请求成功");
         
-            
-        NSArray *statusArray = responseObject[@"statuses"];
-        for (NSDictionary *dict in statusArray) {
-            
-//            Status *status = [[Status alloc] init];
-//            [status mj_setKeyValues:dict];
-
-            // 如果使用KVC赋值, 需要重写setValue:forUndefinedKey:
-//            [status setValuesForKeysWithDictionary:dict];
-            
-            
-            
-            Status *status = [Status mj_objectWithKeyValues:dict];
-            
-            
-            
-            [self.statusArray addObject:status];
-        }
+        //网络请求下来的最新的微博数据
+        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         
+        [self.statusArray addObjectsFromArray:newStatusArray];
         
         [self.tableView reloadData];
+        
+//        NSArray *statusArray = responseObject[@"statuses"];
+//        for (NSDictionary *dict in statusArray) {
+//            
+////            Status *status = [[Status alloc] init];
+////            [status mj_setKeyValues:dict];
+//
+//            // 如果使用KVC赋值, 需要重写setValue:forUndefinedKey:
+////            [status setValuesForKeysWithDictionary:dict];
+//            
+//            
+//            
+//            Status *status = [Status mj_objectWithKeyValues:dict];
+//            
+//            
+//            
+//            [self.statusArray addObject:status];
+//        }
+//        
+//        
+//        [self.tableView reloadData];
         
         
         // 包含模型的复杂字典, 不能写到plist文件中
@@ -317,7 +323,7 @@
     
     cell.textLabel.text = status.user.name;
     cell.detailTextLabel.text = status.text;
-    NSString *urlString = status.user.avatar_hd;
+    NSString *urlString = status.user.profile_image_url;
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
     
     

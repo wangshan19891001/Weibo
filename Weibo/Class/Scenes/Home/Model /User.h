@@ -11,7 +11,7 @@
 @interface User : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *avatar_hd;
+@property (nonatomic, copy) NSString *profile_image_url;
 @property (nonatomic, copy) NSString *idstr;
 
 @end
