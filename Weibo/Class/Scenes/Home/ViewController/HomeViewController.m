@@ -21,6 +21,7 @@
 
 #import "UserInfoReq.h"
 #import "StatusReq.h"
+#import "LoadMoreFooter.h"
 
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -63,13 +64,62 @@
     // 请求用户信息
     [self loadUserInfo];
     
-    // 加载微博数据
-    [self loadNewStatus];
+    // 加载微博数据 (改为程序启动后, 自动进入下拉刷新状态)
+//    [self loadNewStatus];
     
     // 集成下拉刷新控件
     [self setupDownRefresh];
     
+    // 集成上拉刷新控件
+    [self setupUpRefresh];
+    
+    //获得微博未读数
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(setupUnreadCount) userInfo:nil repeats:YES];
+    //主线程也会抽时间处理一下timer (不管主线程是否正在处理其他事件)
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes]; //默认timer也是加到主运行循环的, 这里主要是为了修改运行循环的模式
+    //主运行循环在程序进入后台时, 会停止运行, 需要在appDelegate中做一些处理
+    
+    
 }
+
+//设置未读微博数
+- (void)setupUnreadCount {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    Account *account = [LocalTools loadAccount];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"access_token"] = account.access_token;
+    param[@"uid"] = account.uid;
+    
+    [manager GET:@"https://rm.api.weibo.com/2/remind/unread_count.json" parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //微博的未读数
+//        int unRead = [responseObject[@"status"] intValue];
+//        self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", unRead];
+        
+        NSString *unread = [responseObject[@"status"] description];
+        if ([unread isEqualToString:@"0"]) {
+            self.tabBarItem.badgeValue = nil;
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        }else{
+        
+            self.tabBarItem.badgeValue = unread;
+            [UIApplication sharedApplication].applicationIconBadgeNumber = [unread integerValue];
+        }
+        
+        
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取未读微博数失败");
+        
+    }];
+    
+    
+}
+
 
 
 
@@ -152,11 +202,20 @@
 }
 
 - (void)setupDownRefresh {
-
-    UIRefreshControl *control = [[UIRefreshControl alloc] init];
-    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
     
+    //1, 添加刷新控件
+    UIRefreshControl *control = [[UIRefreshControl alloc] init];
+    //只有手动下拉, 才会触发valueChanged
+    [control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:control];
+    
+    //2, 程序启动后, 马上进入刷新状态
+    [control beginRefreshing];
+    
+    //3, 手动调用刷新方法
+    [self refreshStateChange:control];
+    
+    
 }
 - (void)refreshStateChange:(UIRefreshControl*)control {
 
@@ -179,6 +238,9 @@
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"下拉刷新请求成功");
         
+        //下拉刷新成功, 清空badgeValue
+        self.tabBarItem.badgeValue = nil;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         
         // 将微博的字典数组 转为 模型数组
         NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
@@ -197,6 +259,10 @@
         //结束刷新
         [control endRefreshing];
         
+        
+        //显示最新微博数量
+        [self showNewStatusCount:(int)newStatusArray.count];
+        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
         NSLog(@"下拉刷新请求失败, error: %@", error);
@@ -205,6 +271,68 @@
         [control endRefreshing];
     }];
 }
+
+//显示最新微博的数量
+- (void)showNewStatusCount:(int)count {
+    
+    //1, 创建
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    label.width = [UIScreen mainScreen].bounds.size.width;
+    label.height = 35;
+    
+    //2, 设置属性
+    if (count == 0) {
+        label.text = @"没有新的微博数据";
+    }else{
+        label.text = [NSString stringWithFormat:@"共有%d条新的微博数据", count];
+    }
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:16];
+    
+    label.y = 64 - label.height;
+    
+    //3,添加
+    //将label添加到导航控制器的view中, 并且在导航栏的下面
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    //4,动画
+    float duration = 1.0;
+    [UIView animateWithDuration:duration animations:^{
+        
+//        label.y += label.height;
+        label.transform = CGAffineTransformMakeTranslation(0, label.height);
+        
+    } completion:^(BOOL finished) {
+        
+        float delay = 1.0;
+        [UIView animateWithDuration:duration delay:delay options:UIViewAnimationOptionCurveLinear animations:^{
+            
+//            label.y -= label.height;
+            label.transform = CGAffineTransformIdentity;
+            
+        } completion:^(BOOL finished) {
+            
+            [label removeFromSuperview];
+        }];
+    }];
+    
+    //如果某个动画执行完毕后, 又要互道动画执行前的状态, 建议用transform做动画
+    
+}
+
+
+//上拉加载控件
+- (void)setupUpRefresh {
+    
+    LoadMoreFooter *footer = [LoadMoreFooter footer];
+    footer.hidden = YES;
+    self.tableView.tableFooterView = footer;
+    
+}
+
+
 
 #pragma mark - 加载数据
 /**
@@ -337,5 +465,97 @@
     [self.navigationController pushViewController:test1 animated:YES];
     
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (self.statusArray.count == 0 || self.tableView.tableFooterView.isHidden == NO) {
+        return;
+    }
+    
+    
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    // 当最后一个cell完全显示在眼前时，contentOffset的y值
+    CGFloat judgeOffsetY = scrollView.contentSize.height + scrollView.contentInset.bottom - scrollView.height - self.tableView.tableFooterView.height;
+    if (offsetY >= judgeOffsetY) { // 最后一个cell完全进入视野范围内
+        // 显示footer
+        self.tableView.tableFooterView.hidden = NO;
+        
+        // 加载更多的微博数据
+        [self loadMoreStatus];
+    }
+    
+    /*
+     contentInset：除具体内容以外的边框尺寸
+     contentSize: 里面的具体内容（header、cell、footer），除掉contentInset以外的尺寸
+     contentOffset:
+     1.它可以用来判断scrollView滚动到什么位置
+     2.指scrollView的内容超出了scrollView顶部的距离（除掉contentInset以外的尺寸）
+     */
+
+    
+}
+
+- (void)loadMoreStatus {
+    
+    Account *account = [LocalTools loadAccount];
+    
+    StatusReq* request = [[StatusReq alloc] init];
+    request.access_token = account.access_token;
+    request.count = @20;
+    
+    //取出微博中最前面的微博 (微博数据的第一条, 最新, id最大)
+    Status *lastStatus = self.statusArray.lastObject;
+    if (lastStatus) {
+        
+        long long maxId = lastStatus.idstr.longLongValue -1;
+        request.max_id = @(maxId);
+    }
+    
+    
+    NetTools *server = [NetTools sharedManager];
+    [server loadStatus:request success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"下拉刷新请求成功");
+        
+        
+        // 将微博的字典数组 转为 模型数组
+        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        //newStatusArray 需要插入到原来总数组的最前面
+        
+        if (newStatusArray.count > 0) {
+            
+//            NSRange range = NSMakeRange(0, newStatusArray.count); //从头0开始, count是插入的长度
+//            NSIndexSet *set = [NSIndexSet indexSetWithIndexesInRange:range];
+//            [self.statusArray insertObjects:newStatusArray atIndexes:set];
+            
+            //加载到的更多的微博数据,加载到总数组的最后面
+            [self.statusArray addObjectsFromArray:newStatusArray];
+            
+            
+        }
+        
+        //刷新UI
+        [self.tableView reloadData];
+        
+        //结束刷新
+        self.tableView.tableFooterView.hidden = YES;
+        
+        
+        //显示最新微博数量 (上拉加载时, 不用显示微博数量)
+//        [self showNewStatusCount:(int)newStatusArray.count];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"##### Function:%s line:%d ", __FUNCTION__, __LINE__);
+        NSLog(@"下拉刷新请求失败, error: %@", error);
+        
+        //结束刷新状态
+        self.tableView.tableFooterView.hidden = YES;
+    }];
+    
+}
+
+
 
 @end

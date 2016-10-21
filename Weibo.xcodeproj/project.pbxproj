@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		49DCE0430AA46BC925BCC573 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F5CCC83A939711EFB94508 /* libPods.a */; };
 		66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */; };
+		660B06451DB9F209004F46C8 /* LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660B06441DB9F209004F46C8 /* LoadMoreFooter.m */; };
+		660B06471DB9F21E004F46C8 /* LoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660B06461DB9F21E004F46C8 /* LoadMoreFooter.xib */; };
 		662B6F8C1D05072300314861 /* StatusReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8B1D05072300314861 /* StatusReq.m */; };
 		662B6F8F1D051E2500314861 /* UserInfoReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B6F8E1D051E2500314861 /* UserInfoReq.m */; };
 		66B748411CF403D500796A0E /* UIBarButtonItem+navItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B748401CF403D500796A0E /* UIBarButtonItem+navItem.m */; };
@@ -66,6 +68,9 @@
 		2CA58CC63482032C56819E1C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		66033B3E1CEAC17D003894FD /* UIView+FrameExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExtension.h"; sourceTree = "<group>"; };
 		66033B3F1CEAC17D003894FD /* UIView+FrameExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExtension.m"; sourceTree = "<group>"; };
+		660B06431DB9F209004F46C8 /* LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadMoreFooter.h; sourceTree = "<group>"; };
+		660B06441DB9F209004F46C8 /* LoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadMoreFooter.m; sourceTree = "<group>"; };
+		660B06461DB9F21E004F46C8 /* LoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreFooter.xib; sourceTree = "<group>"; };
 		662B6F8A1D05072300314861 /* StatusReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusReq.h; sourceTree = "<group>"; };
 		662B6F8B1D05072300314861 /* StatusReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusReq.m; sourceTree = "<group>"; };
 		662B6F8D1D051E2500314861 /* UserInfoReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoReq.h; sourceTree = "<group>"; };
@@ -365,6 +370,9 @@
 				66C3631B1DB8CA4600BBB9DF /* TitleButton.m */,
 				66C3631C1DB8CA4600BBB9DF /* WSDropdownMenu.h */,
 				66C3631D1DB8CA4600BBB9DF /* WSDropdownMenu.m */,
+				660B06431DB9F209004F46C8 /* LoadMoreFooter.h */,
+				660B06441DB9F209004F46C8 /* LoadMoreFooter.m */,
+				660B06461DB9F21E004F46C8 /* LoadMoreFooter.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,6 +653,7 @@
 				66C363491DB8CA4600BBB9DF /* test1ViewController.xib in Resources */,
 				66C12A681CE960BA001D85FA /* Default@2x.png in Resources */,
 				66C12A331CE95B20001D85FA /* LaunchScreen.storyboard in Resources */,
+				660B06471DB9F21E004F46C8 /* LoadMoreFooter.xib in Resources */,
 				66C12A301CE95B20001D85FA /* Assets.xcassets in Resources */,
 				66C12A2E1CE95B20001D85FA /* Main.storyboard in Resources */,
 			);
@@ -724,6 +733,7 @@
 				66C363411DB8CA4600BBB9DF /* DiscoverViewController.m in Sources */,
 				66C3634C1DB8CA4600BBB9DF /* WSSearchBar.m in Sources */,
 				66C3634D1DB8CA4600BBB9DF /* MessageViewController.m in Sources */,
+				660B06451DB9F209004F46C8 /* LoadMoreFooter.m in Sources */,
 				662B6F8C1D05072300314861 /* StatusReq.m in Sources */,
 				66C363441DB8CA4600BBB9DF /* TitleButton.m in Sources */,
 				66C363461DB8CA4600BBB9DF /* DropTableVC.m in Sources */,

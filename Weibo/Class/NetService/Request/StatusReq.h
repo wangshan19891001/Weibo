@@ -22,4 +22,6 @@
  *  当前数组中since_id最大的
  */
 @property (nonatomic, copy) NSString *since_id;
+
+@property (nonatomic, strong) NSNumber *max_id;
 @end

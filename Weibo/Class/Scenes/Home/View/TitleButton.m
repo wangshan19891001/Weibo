@@ -23,8 +23,28 @@
     return self;
 }
 
-- (void)layoutSubviews {
 
+//所有修改frame的方法, 最终都会调用setFrame 方法 (想在系统计算和设置完按钮的尺寸后, 在修改一下尺寸)
+- (void)setFrame:(CGRect)frame {
+    
+    NSLog(@"++++++++%@", NSStringFromCGRect(frame));
+    frame.size.width += 10;
+    
+    //将外部传入的frame进行修改后, 在传入系统的设置frame
+    [super setFrame:frame];
+    
+    
+}
+
+
+
+
+
+
+
+
+- (void)layoutSubviews {
+    
     [super layoutSubviews];
     
     //如果仅仅是调整按钮内部titleLabel 和 imageView 的位置, 那么在layoutSubviews中单独设置位置即可
@@ -36,7 +56,7 @@
     
     self.titleLabel.x = 0;
     
-    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
+    self.imageView.x = CGRectGetMaxX(self.titleLabel.frame) + 10;
     
 }
 
