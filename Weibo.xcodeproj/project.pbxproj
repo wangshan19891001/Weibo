@@ -614,6 +614,7 @@
 				TargetAttributes = {
 					66C12A1F1CE95B20001D85FA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZP7C7YGT7K;
 					};
 					66C12A381CE95B20001D85FA = {
 						CreatedOnToolsVersion = 7.3;
@@ -898,6 +899,7 @@
 			baseConfigurationReference = 2CA58CC63482032C56819E1C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZP7C7YGT7K;
 				GCC_PREFIX_HEADER = Weibo/Class/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = Weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -912,6 +914,7 @@
 			baseConfigurationReference = 8B4D57B8051881D35A651FBE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZP7C7YGT7K;
 				GCC_PREFIX_HEADER = Weibo/Class/Other/PrefixHeader.pch;
 				INFOPLIST_FILE = Weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
