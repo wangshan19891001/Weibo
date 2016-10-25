@@ -17,5 +17,10 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *idstr;
 
+/**	string	微博创建时间*/
+@property (nonatomic, copy) NSString *created_at;
+
+/**	string	微博来源*/
+@property (nonatomic, copy) NSString *source;
 
 @end

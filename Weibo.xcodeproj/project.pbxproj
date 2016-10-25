@@ -41,6 +41,8 @@
 		66C363511DB8CA4600BBB9DF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363401DB8CA4600BBB9DF /* ProfileViewController.m */; };
 		66C363541DB8CCD400BBB9DF /* WSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C363531DB8CCD400BBB9DF /* WSNavigationController.m */; };
 		66C8ED901CFE7E0600AC2858 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */; };
+		66D0B73B1DBEED8E00A1D0AC /* StatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D0B73A1DBEED8E00A1D0AC /* StatusFrame.m */; };
+		66D0B73E1DBEFECA00A1D0AC /* StatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D0B73D1DBEFECA00A1D0AC /* StatusCell.m */; };
 		66D502611CFC1D1C006C35DE /* AccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D502601CFC1D1C006C35DE /* AccountTool.m */; };
 		66D6E7C41CFD39E800C9A900 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6E7C31CFD39E800C9A900 /* UIWindow+Extension.m */; };
 		66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E2A78A1D0128DC00864D77 /* NetTools.m */; };
@@ -129,6 +131,10 @@
 		66C363521DB8CCD400BBB9DF /* WSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNavigationController.h; sourceTree = "<group>"; };
 		66C363531DB8CCD400BBB9DF /* WSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNavigationController.m; sourceTree = "<group>"; };
 		66C8ED8F1CFE7E0600AC2858 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		66D0B7391DBEED8E00A1D0AC /* StatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusFrame.h; sourceTree = "<group>"; };
+		66D0B73A1DBEED8E00A1D0AC /* StatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusFrame.m; sourceTree = "<group>"; };
+		66D0B73C1DBEFECA00A1D0AC /* StatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCell.h; sourceTree = "<group>"; };
+		66D0B73D1DBEFECA00A1D0AC /* StatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusCell.m; sourceTree = "<group>"; };
 		66D5025F1CFC1D1C006C35DE /* AccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTool.h; sourceTree = "<group>"; };
 		66D502601CFC1D1C006C35DE /* AccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTool.m; sourceTree = "<group>"; };
 		66D6E7C21CFD39E800C9A900 /* UIWindow+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Extension.h"; sourceTree = "<group>"; };
@@ -355,10 +361,12 @@
 		66C363141DB8CA4600BBB9DF /* Model  */ = {
 			isa = PBXGroup;
 			children = (
-				66C363151DB8CA4600BBB9DF /* Status.h */,
-				66C363161DB8CA4600BBB9DF /* Status.m */,
 				66C363171DB8CA4600BBB9DF /* User.h */,
 				66C363181DB8CA4600BBB9DF /* User.m */,
+				66C363151DB8CA4600BBB9DF /* Status.h */,
+				66C363161DB8CA4600BBB9DF /* Status.m */,
+				66D0B7391DBEED8E00A1D0AC /* StatusFrame.h */,
+				66D0B73A1DBEED8E00A1D0AC /* StatusFrame.m */,
 			);
 			path = "Model ";
 			sourceTree = "<group>";
@@ -373,6 +381,8 @@
 				660B06431DB9F209004F46C8 /* LoadMoreFooter.h */,
 				660B06441DB9F209004F46C8 /* LoadMoreFooter.m */,
 				660B06461DB9F21E004F46C8 /* LoadMoreFooter.xib */,
+				66D0B73C1DBEFECA00A1D0AC /* StatusCell.h */,
+				66D0B73D1DBEFECA00A1D0AC /* StatusCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,9 +764,11 @@
 				66C3634A1DB8CA4600BBB9DF /* WSTabBar.m in Sources */,
 				66C3634E1DB8CA4600BBB9DF /* WSNewFeatureViewController.m in Sources */,
 				66E2A78F1D01299A00864D77 /* LocalTools.m in Sources */,
+				66D0B73B1DBEED8E00A1D0AC /* StatusFrame.m in Sources */,
 				66033B401CEAC17D003894FD /* UIView+FrameExtension.m in Sources */,
 				66E2A78B1D0128DC00864D77 /* NetTools.m in Sources */,
 				66C3634F1DB8CA4600BBB9DF /* Account.m in Sources */,
+				66D0B73E1DBEFECA00A1D0AC /* StatusCell.m in Sources */,
 				66C363471DB8CA4600BBB9DF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

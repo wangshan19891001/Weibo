@@ -15,6 +15,7 @@
 #import "Account.h"
 #import "Status.h"
 #import "User.h"
+#import "StatusFrame.h"
 
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
@@ -22,6 +23,7 @@
 #import "UserInfoReq.h"
 #import "StatusReq.h"
 #import "LoadMoreFooter.h"
+#import "StatusCell.h"
 
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -217,6 +219,20 @@
     
     
 }
+
+- (NSArray *)statusFramesWithStatuses:(NSArray *)statuses {
+    
+    NSMutableArray *frames = [NSMutableArray array];
+    for (Status *status in statuses) {
+        StatusFrame *frame = [[StatusFrame alloc] init];
+        frame.status = status;
+        [frames addObject:frame];
+    }
+    
+    
+    return frames;
+}
+
 - (void)refreshStateChange:(UIRefreshControl*)control {
 
     Account *account = [LocalTools loadAccount];
@@ -226,7 +242,10 @@
     request.count = @20;
     
     //取出微博中最前面的微博 (微博数据的第一条, 最新, id最大)
-    Status *firstStatus = self.statusArray.firstObject;
+    StatusFrame *firstStatusFrame = self.statusArray.firstObject;
+    
+    Status *firstStatus = firstStatusFrame.status;
+    
     if (firstStatus) {
         request.since_id = firstStatus.idstr;
     }
@@ -243,8 +262,13 @@
         [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         
         // 将微博的字典数组 转为 模型数组
-        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         //newStatusArray 需要插入到原来总数组的最前面
+        
+        
+        //将Status数组转为StatusFrame数组
+        NSArray *newStatusArray = [self statusFramesWithStatuses:statusArray];
+        
         
         if (newStatusArray.count > 0) {
             
@@ -385,7 +409,11 @@
         NSLog(@"微博数据请求成功");
         
         //网络请求下来的最新的微博数据
-        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        
+        //将Status数组转为StatusFrame数组
+        NSArray *newStatusArray = [self statusFramesWithStatuses:statusArray];
+        
         
         [self.statusArray addObjectsFromArray:newStatusArray];
         
@@ -441,18 +469,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = @"status";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-    }
     
-    Status *status = self.statusArray[indexPath.row];
-    
-    cell.textLabel.text = status.user.name;
-    cell.detailTextLabel.text = status.text;
-    NSString *urlString = status.user.profile_image_url;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:@"avatar_default"]];
+    StatusCell *cell = [StatusCell cellWithTableView:tableView];
+    cell.statusFrame = self.statusArray[indexPath.row];
     
     
     return cell;
@@ -465,6 +484,12 @@
     [self.navigationController pushViewController:test1 animated:YES];
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    StatusFrame *statusFrame = self.statusArray[indexPath.row];
+    return statusFrame.cellHeight;
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
@@ -505,7 +530,8 @@
     request.count = @20;
     
     //取出微博中最前面的微博 (微博数据的第一条, 最新, id最大)
-    Status *lastStatus = self.statusArray.lastObject;
+    StatusFrame *lastStatusFrame = self.statusArray.lastObject;
+    Status *lastStatus = lastStatusFrame.status;
     if (lastStatus) {
         
         long long maxId = lastStatus.idstr.longLongValue -1;
@@ -521,8 +547,12 @@
         
         
         // 将微博的字典数组 转为 模型数组
-        NSArray *newStatusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+        NSArray *statusArray = [Status mj_objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
         //newStatusArray 需要插入到原来总数组的最前面
+        
+        NSArray *newStatusArray = [self statusFramesWithStatuses:statusArray];
+        
+        
         
         if (newStatusArray.count > 0) {
             
